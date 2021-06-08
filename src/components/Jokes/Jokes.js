@@ -10,13 +10,20 @@ class Jokes extends Component {
     }
   }
 
+  componentDidMount() {
+    fetchJoke()
+      .then(data => {
+        this.setState({ curJoke: data.joke })
+      })
+  }
+
   render() {
     return (
       <div>
-        Joke displayed here
+        {this.state.curJoke}
       </div>
     )
   }
 }
 
-export default Jokes; 
+export default Jokes;
