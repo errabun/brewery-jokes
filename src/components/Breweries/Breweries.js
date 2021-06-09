@@ -25,7 +25,7 @@ class Breweries extends Component {
   }
 
   foundBreweries() {
-    this.state.breweries.map(brew => {
+    return this.state.breweries.map(brew => {
       return (
         <BrewCards
           key={brew.id}

@@ -1,6 +1,6 @@
 import './BrewCards.css'
 
-const BrewCards = ({name, address, url}) => {
+const BrewCards = ({name, address, url, id }) => {
 
   return (
     <div>
