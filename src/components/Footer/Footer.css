@@ -1,1 +1,21 @@
+.footer-container {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 
+  width: 100%;
+  height: 20vh;
+
+  background: linear-gradient(#240059, #4601b5, #240059);
+  font-family: 'Anton', sans-serif;
+  color: #87e7ff;
+}
+
+.github-link {
+  font-size: x-large;
+  color: white;
+}
+
+a {
+  color: #87e7ff;
+}

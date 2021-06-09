@@ -10,7 +10,11 @@
 
 .nav-title {
   display: inline-flex;
-  align-items: center;
   margin-left: 1vw;
   margin-right: 1vw;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
 }

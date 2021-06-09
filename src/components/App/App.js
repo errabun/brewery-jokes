@@ -10,10 +10,8 @@ function App() {
     <div>
     <main>
       <Header />
-      <Switch>
         <Breweries />
         <Jokes />
-      </Switch>
       <Footer />
       </main>
     </div>
