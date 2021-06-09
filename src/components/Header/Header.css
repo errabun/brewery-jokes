@@ -3,8 +3,7 @@
   height: 15vh;
   min-height: 125px;
 
-  background: linear-gradient(#240059, #4601b5, #240059);
-  color: #87e7ff;
+  background: linear-gradient(#1303c4, #03c4b7, #1303c4);
   font-family: 'Anton', sans-serif;
 }
 
@@ -17,4 +16,8 @@
 .nav-links {
   display: flex;
   justify-content: flex-end;
+}
+
+h1, h2 {
+  color: darkorange; 
 }
