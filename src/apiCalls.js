@@ -2,7 +2,7 @@ export const fetchBreweries = (zip) => {
   return fetch(`https://api.openbrewerydb.org/breweries?by_postal=${zip}`)
     .then(response => {
       if (!response.ok) {
-        throw new Error('Couldn\'t load any breweries, please try again!'
+        throw new Error('Couldn\'t load any breweries, please try again!')
       } else {
         return response.json()
       }

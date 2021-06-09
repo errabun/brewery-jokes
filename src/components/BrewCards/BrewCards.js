@@ -5,7 +5,7 @@ const BrewCards = ({name, address, url, id }) => {
   return (
     <div >
       <h3>{name}</h3>
-      <p>{address}</p>
+      <p>{address.join(', ')}</p>
       <a href={url}>{url}</a>
     </div>
   )
