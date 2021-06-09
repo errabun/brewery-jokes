@@ -7,7 +7,7 @@ export const fetchJoke = () => {
   return fetch('https://icanhazdadjoke.com/', {
     headers: {
       Accept: 'application/json',
-      'User-Agent': 'Brew Jokes (https://github.com/errabun/brewery-jokes)'
+      'User-Agent': 'Brew Jokes (https://github.com/errabun/brewery-jokes)' 
     }
   })
     .then(response => response.json())
