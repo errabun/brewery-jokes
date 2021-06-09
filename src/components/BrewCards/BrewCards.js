@@ -4,7 +4,9 @@ const BrewCards = ({name, address, url, id }) => {
 
   return (
     <div >
-      some brewery information
+      <h3>{name}</h3>
+      <p>{address}</p>
+      <a href={url}>{url}</a>
     </div>
   )
 }

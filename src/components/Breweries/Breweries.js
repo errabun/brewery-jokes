@@ -24,14 +24,14 @@ class Breweries extends Component {
     this.setState({ query: '' })
   }
 
-  componentDidUpdate() {
+  foundBreweries() {
     return this.state.breweries.map(brew => {
       return (
         <BrewCards
           key={brew.id}
           id={brew.id}
           name={brew.name}
-          address={brew.street, brew.city, brew.state}
+          address={brew.street}
           url={brew.website_url}
         />
       )
@@ -53,6 +53,8 @@ class Breweries extends Component {
           />
           <button onClick={event => this.getQuery(event)}>Find breweries</button>
         </form>
+        {this.state.breweries.length &&}
+        <section>{this.foundBreweries()}</section>
       </div>
     )
   }
