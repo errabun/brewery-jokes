@@ -1,0 +1,16 @@
+.nav-bar {
+  width: 100%;
+  height: 15vh;
+  min-height: 125px;
+
+  background: linear-gradient(#240059, #4601b5, #240059);
+  color: #87e7ff;
+  font-family: 'Anton', sans-serif;
+}
+
+.nav-title {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
