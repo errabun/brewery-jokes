@@ -24,6 +24,20 @@ class Breweries extends Component {
     this.setState({ query: '' })
   }
 
+  foundBreweries() {
+    this.state.breweries.map(brew => {
+      return (
+        <BrewCards
+          key={brew.id}
+          id={brew.id}
+          name={brew.name}
+          address={brew.street, brew.city, brew.state}
+          url={brew.website_url}
+        />
+      )
+    })
+  }
+
   render() {
     return (
       <div>
