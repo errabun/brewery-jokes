@@ -18,8 +18,9 @@ class Breweries extends Component {
 
   getQuery = event => {
     event.preventDefault()
-    const zipQuery = this.state.getQuery
-    this.props.submitSearch(zipQuery)
+    const zipQuery = this.state.query
+    fetchBreweries(zipQuery)
+      .then(data => console.log(data))
     this.setState({ query: '' })
   }
 
