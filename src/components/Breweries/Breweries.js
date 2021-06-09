@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import BrewCards from '../BrewCards/BrewCards'
+import { fetchBreweries } from '../../apiCalls'
 import './Breweries.css'
 
 class Breweries extends Component {
@@ -8,6 +9,11 @@ class Breweries extends Component {
     this.state = {
       breweries: []
     }
+  }
+
+  componentDidMount() {
+    fetchBreweries()
+      .then()
   }
 
   render() {
@@ -19,4 +25,4 @@ class Breweries extends Component {
   }
 }
 
-export default Breweries 
+export default Breweries
