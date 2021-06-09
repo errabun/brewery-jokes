@@ -3,7 +3,7 @@ import './BrewCards.css'
 const BrewCards = ({name, address, url, id }) => {
 
   return (
-    <div>
+    <div >
       some brewery information
     </div>
   )

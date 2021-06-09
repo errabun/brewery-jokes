@@ -20,11 +20,11 @@ class Breweries extends Component {
     event.preventDefault()
     const zipQuery = this.state.query
     fetchBreweries(zipQuery)
-      .then(data => console.log(data))
+      .then(data => this.setState({ breweries: data}))
     this.setState({ query: '' })
   }
 
-  foundBreweries() {
+  componentDidUpdate() {
     return this.state.breweries.map(brew => {
       return (
         <BrewCards
