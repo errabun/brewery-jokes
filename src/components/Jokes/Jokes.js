@@ -17,9 +17,12 @@ class Jokes extends Component {
       })
   }
 
+
+
   render() {
     return (
-      <div>
+      <div className='joke-container'>
+        <h2>Step 2: Find a good joke</h2>
         {this.state.curJoke}
       </div>
     )

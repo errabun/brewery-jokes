@@ -29,7 +29,7 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <>
+      <div className='input-form'>
         <h1> Welcome to Brew n' Jokes</h1>
         <h2> Step 1: Find breweries near you</h2>
         <form className='search-form'>
@@ -44,7 +44,7 @@ class Dashboard extends Component {
             <button onClick={event => this.getQuery(event)}>Find breweries</button>
           </Link>
         </form>
-      </>
+      </div>
     )
   }
 }
