@@ -1,17 +1,26 @@
 import { Component } from 'react'
 import BrewCards from '../BrewCards/BrewCards'
+import { fetchBreweries } from '../../apiCalls'
 import './Breweries.css'
 
 class Breweries extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      breweries: this.props.fetchedBreweries
+      breweries: []
     }
   }
 
+  fetchQueriedBrews() {
+    const zipQuery = this.props.zipQuery
+    fetchBreweries(zipQuery)
+      .then(data => this.setState({ breweries: data }))
+      .catch(error => this.setState({ error: error }))
+    this.setState({ query: '' })
+  }
+
   foundBreweries() {
-    console.log(this.props)
+    console.log(this.state.breweries)
     return this.state.breweries.map(brew => {
       return (
         <BrewCards

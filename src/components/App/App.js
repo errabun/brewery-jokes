@@ -13,8 +13,11 @@ function App() {
       <Header />
       <Switch>
         <Route
-          path = '/breweries'
-          component={Breweries}
+          path = '/breweries/:zip'
+          render={({ match }) => {
+            const { zip } = match.params
+            return <Breweries zipQuery={zip} />
+          }}
         />
         <Route
           path = '/jokes'
