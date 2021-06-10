@@ -1,7 +1,6 @@
 import './Dashboard.css'
 import { Component } from 'react'
 import { Link } from 'react-router-dom'
-import Breweries from '../Breweries/Breweries'
 
 class Dashboard extends Component {
   constructor() {

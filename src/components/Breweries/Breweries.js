@@ -11,7 +11,7 @@ class Breweries extends Component {
     }
   }
 
-  fetchQueriedBrews() {
+  componentDidMount() {
     const zipQuery = this.props.zipQuery
     fetchBreweries(zipQuery)
       .then(data => this.setState({ breweries: data }))
