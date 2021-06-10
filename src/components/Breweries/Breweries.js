@@ -36,6 +36,7 @@ class Breweries extends Component {
           city={brew.city}
           state={brew.state}
           url={brew.website_url}
+          breweries={this.state.breweries}
         />
       )
     })

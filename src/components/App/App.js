@@ -10,8 +10,17 @@ function App() {
     <div>
     <main>
       <Header />
-        <Breweries />
-        <Jokes />
+      
+      <Switch>
+        <Route
+          exact path = '/breweries'
+          component={Breweries}
+        />
+        <Route
+          exact path = '/jokes'
+          component={Jokes}
+        />
+      </Switch>
       <Footer />
       </main>
     </div>
