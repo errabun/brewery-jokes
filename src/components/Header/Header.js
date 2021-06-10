@@ -9,8 +9,7 @@ const Header = () => {
         <h1>🍺  Brew n' Jokes  🍺  </h1>
       </div>
       <div className="nav-links">
-        <h2>Breweries</h2>
-        <h2>Jokes</h2>
+        <h2>Favorites</h2>
       </div>
     </nav>
   )

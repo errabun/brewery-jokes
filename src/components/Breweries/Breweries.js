@@ -1,17 +1,17 @@
 import { Component } from 'react'
 import BrewCards from '../BrewCards/BrewCards'
-import { fetchBreweries } from '../../apiCalls'
 import './Breweries.css'
 
 class Breweries extends Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
       breweries: this.props.fetchedBreweries
     }
   }
 
   foundBreweries() {
+    console.log(this.state.breweries)
     return this.state.breweries.map(brew => {
       return (
         <BrewCards

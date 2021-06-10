@@ -21,9 +21,7 @@ class Dashboard extends Component {
     const zipQuery = this.state.query
     fetchBreweries(zipQuery)
       .then(data => {
-        <Breweries
-          fetchedBreweries = {data}
-        />
+        <Breweries data/>
       })
       .catch(error => this.setState({ error: error }))
     this.setState({ query: '' })
