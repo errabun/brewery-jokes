@@ -3,15 +3,15 @@ import BrewCards from '../BrewCards/BrewCards'
 import './Breweries.css'
 
 class Breweries extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       breweries: this.props.fetchedBreweries
     }
   }
 
   foundBreweries() {
-    console.log(this.state.breweries)
+    console.log(this.props)
     return this.state.breweries.map(brew => {
       return (
         <BrewCards

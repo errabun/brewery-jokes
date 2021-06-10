@@ -13,15 +13,15 @@ function App() {
       <Header />
       <Switch>
         <Route
-          exact path = '/breweries'
+          path = '/breweries'
           component={Breweries}
         />
         <Route
-          exact path = '/jokes'
+          path = '/jokes'
           component={Jokes}
         />
         <Route
-          exact path = '/'
+          path = '/'
           component={Dashboard}
         />
         <Redirect to = '/' />

@@ -18,7 +18,6 @@ class Jokes extends Component {
   }
 
 
-
   render() {
     return (
       <div className='joke-container'>
