@@ -21,6 +21,7 @@ class Breweries extends Component {
     const zipQuery = this.state.query
     fetchBreweries(zipQuery)
       .then(data => this.setState({ breweries: data}))
+      .catch(error => this.setState({ error: error }))
     this.setState({ query: '' })
   }
 
