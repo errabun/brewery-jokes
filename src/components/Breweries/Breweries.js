@@ -4,11 +4,10 @@ import { fetchBreweries } from '../../apiCalls'
 import './Breweries.css'
 
 class Breweries extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      query: '',
-      breweries: []
+      breweries: this.props.fetchedBreweries
     }
   }
 
@@ -23,7 +22,6 @@ class Breweries extends Component {
           city={brew.city}
           state={brew.state}
           url={brew.website_url}
-          breweries={this.state.breweries}
         />
       )
     })

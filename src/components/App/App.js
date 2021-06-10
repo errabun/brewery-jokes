@@ -24,6 +24,7 @@ function App() {
           exact path = '/'
           component={Dashboard}
         />
+        <Redirect to = '/' />
       </Switch>
       <Footer />
       </main>
