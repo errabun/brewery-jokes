@@ -37,6 +37,7 @@ class Breweries extends Component {
   render() {
     return (
       <div>
+        <h1>Step 2: Select a brewery to visit!</h1>
         {!this.state.breweries.length && !this.state.error &&
           <h1 className='loading'>'Getting nearby breweries...'</h1>
         }
