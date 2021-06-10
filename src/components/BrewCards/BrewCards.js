@@ -1,13 +1,16 @@
 import './BrewCards.css'
 
-const BrewCards = ({name, address, url, id }) => {
+const BrewCards = ({name, street, city, state, url, id }) => {
 
   return (
     <div >
       <h3>{name}</h3>
-      <p>{address.join(', ')}</p>
+      {!street &&
+        'No address listed for this brewery!'}
+      {street && city && state &&
+        <p>{street} {city}, {state}</p>}
       {!url &&
-        <p>Couldn't find a webpage for this brewery!</p>}
+        'Can\'t find a website for this brewery!'}
       <a href={url}>{url}</a>
     </div>
   )

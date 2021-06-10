@@ -31,7 +31,9 @@ class Breweries extends Component {
           key={brew.id}
           id={brew.id}
           name={brew.name}
-          address={[brew.street, brew.city, brew.state]}
+          street={brew.street}
+          city={brew.city}
+          state={brew.state}
           url={brew.website_url}
         />
       )
