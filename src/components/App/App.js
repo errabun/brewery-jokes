@@ -31,6 +31,7 @@ function App() {
           render={() => {
             return <Favorites />
           }}
+        />
         <Route
           path = '/'
           component={Dashboard}
