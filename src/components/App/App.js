@@ -4,6 +4,7 @@ import Breweries from '../Breweries/Breweries'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import Dashboard from '../Dashboard/Dashboard'
+import Favorites from '../Favorites/Favorites'
 import { Route, Switch, Redirect } from 'react-router-dom'
 
 function App() {
@@ -25,6 +26,11 @@ function App() {
             return <Jokes />
           }}
         />
+        <Route
+          path = '/favorites'
+          render={() => {
+            return <Favorites />
+          }}
         <Route
           path = '/'
           component={Dashboard}
