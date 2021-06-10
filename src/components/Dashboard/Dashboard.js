@@ -2,6 +2,7 @@ import './Dashboard.css'
 import { Component } from 'react'
 import { fetchBreweries } from '../../apiCalls'
 import { Link } from 'react-router-dom'
+import Breweries from '../Breweries/Breweries'
 
 class Dashboard extends Component {
   constructor() {
@@ -19,7 +20,11 @@ class Dashboard extends Component {
     event.preventDefault()
     const zipQuery = this.state.query
     fetchBreweries(zipQuery)
-      .then(data => this.setState({ breweries: data}))
+      .then(data => {
+        <Breweries
+          fetchedBreweries = {data}
+        />
+      })
       .catch(error => this.setState({ error: error }))
     this.setState({ query: '' })
   }
