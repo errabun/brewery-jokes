@@ -4,25 +4,18 @@ import { fetchBreweries } from '../../apiCalls'
 import './Breweries.css'
 
 class Breweries extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      query: '',
       breweries: []
     }
   }
 
-  zipInput = event => {
-    this.setState({ query: event.target.value })
-  }
-
-  getQuery = event => {
-    event.preventDefault()
-    const zipQuery = this.state.query
+  componentDidMount() {
+    const zipQuery = this.props.zipQuery
     fetchBreweries(zipQuery)
-      .then(data => this.setState({ breweries: data}))
+      .then(data => this.setState({ breweries: data }))
       .catch(error => this.setState({ error: error }))
-    this.setState({ query: '' })
   }
 
   foundBreweries() {
@@ -44,19 +37,18 @@ class Breweries extends Component {
   render() {
     return (
       <div>
-        <h1> Welcome to Brew n' Jokes</h1>
-        <h2> Step 1: Find breweries near you</h2>
-        <form className='search-form'>
-          <input
-            type='text'
-            placeholder='Enter zip'
-            name='zip'
-            value={this.state.query}
-            onChange={event => this.zipInput(event)}
-          />
-          <button onClick={event => this.getQuery(event)}>Find breweries</button>
-        </form>
-        <section>{this.foundBreweries()}</section>
+        {!this.state.breweries.length && !this.state.error &&
+          <h1 className='loading'>'Getting nearby breweries...'</h1>
+        }
+        {this.state.error &&
+          <div className='msg-container'>
+              <h1 className='error-msg user-msg'>{this.state.error}</h1>
+              <button className='return-home' onClick={() => {window.location.href="/"}}>Return Home</button>
+          </div>
+        }
+        {!this.state.error && this.state.breweries.length &&
+          <section>{this.foundBreweries()}</section>
+        }
       </div>
     )
   }

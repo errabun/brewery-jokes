@@ -6,11 +6,14 @@ const Header = () => {
   return (
     <nav className="nav-bar">
       <div className="nav-title">
-        <h1>🍺  Brew n' Jokes  🍺  </h1>
+        <Link to='/' >
+          <h1>🍺  Brew n' Jokes  🍺  </h1>
+        </Link>
       </div>
       <div className="nav-links">
-        <h2>Breweries</h2>
-        <h2>Jokes</h2>
+        <Link to='/favorites' >
+          <h2>Favorites</h2>
+        </Link>
       </div>
     </nav>
   )

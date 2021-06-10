@@ -1,6 +1,8 @@
 import './BrewCards.css'
 
-const BrewCards = ({name, street, city, state, url, id }) => {
+const BrewCards = ({name, street, city, state, url, id }, breweries) => {
+
+  
 
   return (
     <div >
