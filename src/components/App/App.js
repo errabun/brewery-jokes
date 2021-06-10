@@ -21,7 +21,9 @@ function App() {
         />
         <Route
           path = '/jokes'
-          component={Jokes}
+          render={() => {
+            return <Jokes />
+          }}
         />
         <Route
           path = '/'
