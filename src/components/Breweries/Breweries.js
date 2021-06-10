@@ -16,11 +16,9 @@ class Breweries extends Component {
     fetchBreweries(zipQuery)
       .then(data => this.setState({ breweries: data }))
       .catch(error => this.setState({ error: error }))
-    this.setState({ query: '' })
   }
 
   foundBreweries() {
-    console.log(this.state.breweries)
     return this.state.breweries.map(brew => {
       return (
         <BrewCards
@@ -39,7 +37,18 @@ class Breweries extends Component {
   render() {
     return (
       <div>
-        <section>{this.foundBreweries()}</section>
+        {!this.state.breweries.length && !this.state.error &&
+          <h1 className='loading'>'Getting nearby breweries...'</h1>
+        }
+        {this.state.error &&
+          <div className='msg-container'>
+              <h1 className='error-msg user-msg'>{this.state.error}</h1>
+              <button className='return-home' onClick={() => {window.location.href="/"}}>Return Home</button>
+          </div>
+        }
+        {!this.state.error && this.state.breweries.length &&
+          <section>{this.foundBreweries()}</section>
+        }
       </div>
     )
   }
