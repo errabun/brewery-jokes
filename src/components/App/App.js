@@ -4,37 +4,59 @@ import Breweries from '../Breweries/Breweries'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import Dashboard from '../Dashboard/Dashboard'
+import Favorites from '../Favorites/Favorites'
 import { Route, Switch, Redirect } from 'react-router-dom'
+import { Component } from 'react'
 
-function App() {
-  return (
-    <div>
-    <main>
+class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      favBreweries: [],
+      favJokes: []
+    }
+  }
+
+  addToFavorites = (state, data) => {
+    return this.setState({[state]: [...this.state[state], data]})
+  }
+
+  render() {
+    return (
+      <div>
+      <main>
       <Header />
       <Switch>
-        <Route
-          path = '/breweries/:zip'
-          render={({ match }) => {
-            const { zip } = match.params
-            return <Breweries zipQuery={zip} />
-          }}
-        />
-        <Route
-          path = '/jokes'
-          render={() => {
-            return <Jokes />
-          }}
-        />
-        <Route
-          path = '/'
-          component={Dashboard}
-        />
-        <Redirect to = '/' />
+      <Route
+      path = '/breweries/:zip'
+      render={({ match }) => {
+        const { zip } = match.params
+        return <Breweries zipQuery={zip} addToFavorites={this.addToFavorites} />
+      }}
+      />
+      <Route
+      path = '/jokes'
+      render={() => {
+        return <Jokes addToFavorites={this.addToFavorites}/>
+      }}
+      />
+      <Route
+      path = '/favorites'
+      render={() => {
+        return <Favorites favBrews={this.state.favBreweries} favJokes={this.state.favJokes}/>
+      }}
+      />
+      <Route
+      path = '/'
+      component={Dashboard}
+      />
+      <Redirect to = '/' />
       </Switch>
       <Footer />
       </main>
-    </div>
-  );
+      </div>
+    )
+  }
 }
 
 export default App;

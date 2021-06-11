@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import BrewCards from '../BrewCards/BrewCards'
+import Favorites from '../Favorites/Favorites'
 import { fetchBreweries } from '../../apiCalls'
 import './Breweries.css'
 
@@ -18,6 +19,7 @@ class Breweries extends Component {
       .catch(error => this.setState({ error: error }))
   }
 
+
   foundBreweries() {
     return this.state.breweries.map(brew => {
       return (
@@ -29,6 +31,7 @@ class Breweries extends Component {
           city={brew.city}
           state={brew.state}
           url={brew.website_url}
+          addToFavorites={this.props.addToFavorites}
         />
       )
     })
@@ -37,6 +40,7 @@ class Breweries extends Component {
   render() {
     return (
       <div>
+        <h1>Step 2: Select a brewery to visit!</h1>
         {!this.state.breweries.length && !this.state.error &&
           <h1 className='loading'>'Getting nearby breweries...'</h1>
         }
