@@ -1,8 +1,7 @@
 import './Favorites.css'
 
-const Favorites = ({favBrews}) => {
+const Favorites = ({favBrews, favJokes}) => {
 
-  console.log(favBrews)
   const mapFavBrews = () => {
     if (favBrews.length) {
       return favBrews.map(brew => {
@@ -12,6 +11,13 @@ const Favorites = ({favBrews}) => {
       })
     }
     return 'No favorite breweries yet!'
+  }
+
+  const mapFavJokes = () => {
+    if (favJokes.length) {
+      return favJokes.map(joke => <li>{joke}</li>)
+    }
+    return 'No favorited jokes yet!'
   }
 
   return (
@@ -25,7 +31,7 @@ const Favorites = ({favBrews}) => {
       <div className='joke-fav'>
         <h2>Favorite Jokes</h2>
           <ul>
-            
+            {mapFavJokes()}
           </ul>
       </div>
     </div>
