@@ -34,19 +34,7 @@ class Breweries extends Component {
           city={brew.city}
           state={brew.state}
           url={brew.website_url}
-          addToFavorites={() => {
-            return (
-              <li>
-                <Favorites
-                  name={brew.name}
-                  street={brew.street}
-                  city={brew.city}
-                  state={brew.state}
-                  url={brew.website_url}
-                />
-              </li>
-            )
-          }}
+          favBreweries={this.props.favBreweries}
         />
       )
     })
