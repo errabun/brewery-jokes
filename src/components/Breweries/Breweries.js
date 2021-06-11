@@ -32,6 +32,7 @@ class Breweries extends Component {
           state={brew.state}
           url={brew.website_url}
           addToFavorites={this.props.addToFavorites}
+          addSelectedBrew={this.props.addSelectedBrew}
         />
       )
     })
