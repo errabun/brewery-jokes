@@ -23,6 +23,10 @@ class Jokes extends Component {
     return this.props.addToFavorites('favJokes', this.state.curJoke)
   }
 
+  handleSelectJoke() {
+    return this.props.addSelectedJoke(this.state.curJoke)
+  }
+
   render() {
     return (
       <div className='joke-container'>
@@ -30,7 +34,7 @@ class Jokes extends Component {
         <p>{this.state.curJoke}</p>
         <button onClick={() => {this.componentDidMount()}}>Get another joke</button>
         <Link to='/recap' >
-          <button>I'll use this joke</button>
+          <button onClick={() => {this.handleSelectJoke()}}>I'll use this joke</button>
         </Link>
         <button onClick={() => {this.handleAddFavClick()}}>Add to favorites</button>
       </div>
