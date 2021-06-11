@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import BrewCards from '../BrewCards/BrewCards'
+import Favorites from '../Favorites/Favorites'
 import { fetchBreweries } from '../../apiCalls'
 import './Breweries.css'
 
@@ -29,6 +30,15 @@ class Breweries extends Component {
           city={brew.city}
           state={brew.state}
           url={brew.website_url}
+          addFavorites={() => {
+            <Favorites
+              name={brew.name}
+              street={brew.street}
+              city={brew.city}
+              state={brew.state}
+              url={brew.website_url}
+            />
+          }}
         />
       )
     })

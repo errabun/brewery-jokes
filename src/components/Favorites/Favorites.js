@@ -1,8 +1,10 @@
 import './Favorites.css'
 
-const Favorites = () => {
+const Favorites = ({ name, street, city, state, url }) => {
 
-  return
+  return (
+    <h2>Favorite Breweries</h2>
+  )
 }
 
 export default Favorites

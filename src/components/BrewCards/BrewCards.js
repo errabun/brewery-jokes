@@ -1,8 +1,6 @@
 import './BrewCards.css'
 
-const BrewCards = ({name, street, city, state, url, id }, breweries) => {
-
-
+const BrewCards = ({name, street, city, state, url, id, addFavorites }) => {
 
   return (
     <>
@@ -17,7 +15,7 @@ const BrewCards = ({name, street, city, state, url, id }, breweries) => {
         <a href={url}>{url}</a>
       </div>
       <div className='brew-buttons'>
-        <button>Add to favorites</button>
+        <button onClick={event => addFavorites(event)}>Add to favorites</button>
         <button>Select this brewery</button>
       </div>
     </>
