@@ -31,7 +31,7 @@ class Breweries extends Component {
           city={brew.city}
           state={brew.state}
           url={brew.website_url}
-          favBreweries={this.props.favBreweries}
+          addToFavorites={this.props.addToFavorites}
         />
       )
     })

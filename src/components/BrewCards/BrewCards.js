@@ -1,14 +1,12 @@
 import './BrewCards.css'
 
-const BrewCards = ({name, street, city, state, url, id, favBreweries }) => {
+const BrewCards = ({name, street, city, state, url, id, addToFavorites }) => {
 
-  console.log(favBreweries)
+  console.log({addToFavorites})
 
-  const addToFavorites = () => {
-    return favBreweries.push({name, street, city, state, url})
+  const handleAddFavClick = () => {
+    return addToFavorites({name, street, city, state,url})
   }
-
-  console.log(favBreweries)
 
   return (
     <>
@@ -23,7 +21,7 @@ const BrewCards = ({name, street, city, state, url, id, favBreweries }) => {
         <a href={url}>{url}</a>
       </div>
       <div className='brew-buttons'>
-        <button onClick={() => {addToFavorites({name, street, city, state, url})}}>Add to favorites</button>
+        <button onClick={() => handleAddFavClick({name, street, city, state,url})}>Add to favorites</button>
         <button>Select this brewery</button>
       </div>
     </>

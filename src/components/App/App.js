@@ -17,6 +17,10 @@ class App extends Component {
     }
   }
 
+  addToFavorites = data => {
+    return this.setState({favBreweries: [...this.state.favBreweries, data]})
+  }
+
   render() {
     return (
       <div>
@@ -27,7 +31,7 @@ class App extends Component {
       path = '/breweries/:zip'
       render={({ match }) => {
         const { zip } = match.params
-        return <Breweries zipQuery={zip} favBreweries={this.state.favBreweries} />
+        return <Breweries zipQuery={zip} addToFavorites={this.addToFavorites} />
       }}
       />
       <Route
