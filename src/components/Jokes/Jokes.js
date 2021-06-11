@@ -1,6 +1,8 @@
 import { Component } from 'react'
+import { Link } from 'react-router-dom'
 import './Jokes.css'
 import { fetchJoke } from '../../apiCalls'
+
 
 class Jokes extends Component {
   constructor(props) {
@@ -27,7 +29,9 @@ class Jokes extends Component {
         <h2>Step 2: Find a good joke</h2>
         <p>{this.state.curJoke}</p>
         <button onClick={() => {this.componentDidMount()}}>Get another joke</button>
-        <button>I'll use this joke</button>
+        <Link to='/recap' >
+          <button>I'll use this joke</button>
+        </Link>
         <button onClick={() => {this.handleAddFavClick()}}>Add to favorites</button>
       </div>
     )

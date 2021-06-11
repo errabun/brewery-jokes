@@ -5,6 +5,7 @@ import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import Dashboard from '../Dashboard/Dashboard'
 import Favorites from '../Favorites/Favorites'
+import Recap from '../Recap/Recap'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import { Component } from 'react'
 
@@ -45,6 +46,12 @@ class App extends Component {
       render={() => {
         return <Favorites favBrews={this.state.favBreweries} favJokes={this.state.favJokes}/>
       }}
+      />
+      <Route
+        path='/recap'
+        render={() => {
+          return <Recap />
+        }}
       />
       <Route
       path = '/'
