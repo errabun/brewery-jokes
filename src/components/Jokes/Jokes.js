@@ -22,7 +22,9 @@ class Jokes extends Component {
     return (
       <div className='joke-container'>
         <h2>Step 2: Find a good joke</h2>
-        {this.state.curJoke}
+        <p>{this.state.curJoke}</p>
+        <button>Get another joke</button>
+        <button>I'll use this joke</button>
       </div>
     )
   }

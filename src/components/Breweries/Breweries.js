@@ -19,6 +19,10 @@ class Breweries extends Component {
       .catch(error => this.setState({ error: error }))
   }
 
+  addToFavorites() {
+
+  }
+
   foundBreweries() {
     return this.state.breweries.map(brew => {
       return (
@@ -30,8 +34,8 @@ class Breweries extends Component {
           city={brew.city}
           state={brew.state}
           url={brew.website_url}
-          addFavorites={() => {
-            <ul>
+          addToFavorites={() => {
+            return (
               <li>
                 <Favorites
                   name={brew.name}
@@ -41,7 +45,7 @@ class Breweries extends Component {
                   url={brew.website_url}
                 />
               </li>
-            </ul>
+            )
           }}
         />
       )
