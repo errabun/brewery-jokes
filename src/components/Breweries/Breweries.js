@@ -19,9 +19,6 @@ class Breweries extends Component {
       .catch(error => this.setState({ error: error }))
   }
 
-  addToFavorites() {
-
-  }
 
   foundBreweries() {
     return this.state.breweries.map(brew => {

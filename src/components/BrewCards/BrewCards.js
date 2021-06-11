@@ -1,6 +1,14 @@
 import './BrewCards.css'
 
-const BrewCards = ({name, street, city, state, url, id, addToFavorites }) => {
+const BrewCards = ({name, street, city, state, url, id, favBreweries }) => {
+
+  console.log(favBreweries)
+
+  const addToFavorites = () => {
+    return favBreweries.push({name, street, city, state, url})
+  }
+
+  console.log(favBreweries)
 
   return (
     <>
