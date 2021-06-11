@@ -2,8 +2,6 @@ import './BrewCards.css'
 
 const BrewCards = ({name, street, city, state, url, id, addToFavorites }) => {
 
-  console.log({addToFavorites})
-
   const handleAddFavClick = () => {
     return addToFavorites('favBreweries', {name, street, city, state,url})
   }
