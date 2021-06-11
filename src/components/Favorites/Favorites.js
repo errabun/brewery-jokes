@@ -3,7 +3,12 @@ import './Favorites.css'
 const Favorites = ({ name, street, city, state, url }) => {
 
   return (
-    <h2>Favorite Breweries</h2>
+    <div>
+      <h2>Favorite Breweries</h2>
+        <ul>
+          <li>{state}</li>
+        </ul>
+    </div>
   )
 }
 
