@@ -1,4 +1,5 @@
 import './BrewCards.css'
+import { Link } from 'react-router-dom'
 
 const BrewCards = ({name, street, city, state, url, id, addToFavorites }) => {
 
@@ -20,7 +21,9 @@ const BrewCards = ({name, street, city, state, url, id, addToFavorites }) => {
       </div>
       <div className='brew-buttons'>
         <button onClick={() => handleAddFavClick({name, street, city, state,url})}>Add to favorites</button>
-        <button>Select this brewery</button>
+        <Link to={`/jokes/${id}`}>
+          <button>Select this brewery</button>
+        </Link>
       </div>
     </>
   )
