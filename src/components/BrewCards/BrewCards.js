@@ -5,7 +5,7 @@ const BrewCards = ({name, street, city, state, url, id, addToFavorites }) => {
   console.log({addToFavorites})
 
   const handleAddFavClick = () => {
-    return addToFavorites({name, street, city, state,url})
+    return addToFavorites('favBreweries', {name, street, city, state,url})
   }
 
   return (

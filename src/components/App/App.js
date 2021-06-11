@@ -17,8 +17,8 @@ class App extends Component {
     }
   }
 
-  addToFavorites = data => {
-    return this.setState({favBreweries: [...this.state.favBreweries, data]})
+  addToFavorites = (state, data) => {
+    return this.setState({[state]: [...this.state[state], data]})
   }
 
   render() {
@@ -43,7 +43,7 @@ class App extends Component {
       <Route
       path = '/favorites'
       render={() => {
-        return <Favorites />
+        return <Favorites favBrews={this.state.favBreweries}/>
       }}
       />
       <Route
