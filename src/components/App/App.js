@@ -28,6 +28,10 @@ class App extends Component {
     return this.setState({ selectedBrew: data })
   }
 
+  addSelectedJoke = (data) => {
+    return this.setState({ selectedJoke: data })
+  }
+
   render() {
     return (
       <div>
@@ -45,7 +49,7 @@ class App extends Component {
         <Route
           path = '/jokes'
           render={() => {
-            return <Jokes addToFavorites={this.addToFavorites}/>
+            return <Jokes addToFavorites={this.addToFavorites} addSelectedJoke={this.addSelectedJoke} />
           }}
         />
         <Route
