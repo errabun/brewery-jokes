@@ -10,9 +10,8 @@ const Favorites = ({favBrews}) => {
           <li>{brew.name} in {brew.city}, {brew.state}</li>
         )
       })
-    } else {
-      return 'No favorite breweries yet!'
     }
+    return 'No favorite breweries yet!'
   }
 
   return (
@@ -25,6 +24,9 @@ const Favorites = ({favBrews}) => {
       </div>
       <div className='joke-fav'>
         <h2>Favorite Jokes</h2>
+          <ul>
+            
+          </ul>
       </div>
     </div>
   )

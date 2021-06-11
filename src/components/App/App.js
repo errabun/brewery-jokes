@@ -37,13 +37,13 @@ class App extends Component {
       <Route
       path = '/jokes'
       render={() => {
-        return <Jokes />
+        return <Jokes addToFavorites={this.addToFavorites}/>
       }}
       />
       <Route
       path = '/favorites'
       render={() => {
-        return <Favorites favBrews={this.state.favBreweries}/>
+        return <Favorites favBrews={this.state.favBreweries} favJokes={this.state.favJokes}/>
       }}
       />
       <Route

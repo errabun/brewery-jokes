@@ -3,8 +3,8 @@ import './Jokes.css'
 import { fetchJoke } from '../../apiCalls'
 
 class Jokes extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       curJoke: ''
     }
@@ -17,6 +17,10 @@ class Jokes extends Component {
       })
   }
 
+  handleAddFavClick() {
+    return this.props.addToFavorites('favJokes', this.state.curJoke)
+  }
+
 
   render() {
     return (
@@ -25,6 +29,7 @@ class Jokes extends Component {
         <p>{this.state.curJoke}</p>
         <button>Get another joke</button>
         <button>I'll use this joke</button>
+        <button onClick={() => {this.handleAddFavClick()}}>Add to favorites</button>
       </div>
     )
   }
