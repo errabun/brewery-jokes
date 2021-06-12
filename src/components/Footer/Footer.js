@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className='footer-container'>
       <FaGithub />
-      <a href="https://github.com/errabun">Eric Rabun</a>
+      <a href="https://github.com/errabun" className='gh-link'>Eric Rabun</a>
     </footer>
   )
 }

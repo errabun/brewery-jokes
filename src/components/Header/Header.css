@@ -3,7 +3,7 @@
   height: 15vh;
   min-height: 125px;
 
-  background: linear-gradient(#1303c4, #03c4b7, #1303c4);
+  background: linear-gradient(#082eaa, #087faa);
   font-family: 'Anton', sans-serif;
 }
 
@@ -19,5 +19,5 @@
 }
 
 h1, h2 {
-  color: darkorange; 
+  color: darkorange;
 }
