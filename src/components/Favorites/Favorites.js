@@ -6,7 +6,7 @@ const Favorites = ({favBrews, favJokes}) => {
     if (favBrews.length) {
       return favBrews.map(brew => {
         return (
-          <li>{brew.name} in {brew.city}, {brew.state}</li>
+          <li id={brew.id}>{brew.name} in {brew.city}, {brew.state}</li>
         )
       })
     }
@@ -15,7 +15,14 @@ const Favorites = ({favBrews, favJokes}) => {
 
   const mapFavJokes = () => {
     if (favJokes.length) {
-      return favJokes.map(joke => <li>{joke}</li>)
+      return favJokes.map(joke => {
+        return (
+          <div className='joke'>
+            <li id={Date.now()}>{joke}</li>
+            <button className='remove'>Remove from favorites</button>
+          </div>
+        )
+      })
     }
     return 'No favorited jokes yet!'
   }
