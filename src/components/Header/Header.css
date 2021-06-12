@@ -5,17 +5,24 @@
 
   background: linear-gradient(#082eaa, #087faa);
   font-family: 'Anton', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-title {
-  display: inline-flex;
-  margin-left: 1vw;
-  margin-right: 1vw;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin-left: 5vw;
+  font-size: x-large;
 }
 
 .nav-links {
   display: flex;
   justify-content: flex-end;
+  align-self: flex-end;
+  margin-right: 1vw;
 }
 
 h1, h2 {
