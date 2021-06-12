@@ -24,12 +24,13 @@ class App extends Component {
     return this.setState({[state]: [...this.state[state], data]})
   }
 
-  addSelectedBrew = (data) => {
-    return this.setState({ selectedBrew: data })
+  addSelection = (data, state) => {
+    return this.setState({ [state]: data })
   }
 
-  addSelectedJoke = (data) => {
-    return this.setState({ selectedJoke: data })
+  removeFromFavs = (event, state) => {
+    const filteredFavs = this.state[state].filter(selected => selected.id !== parseInt(event.target.id))
+    this.setState({ [state]: filteredFavs })
   }
 
   render() {
@@ -42,20 +43,20 @@ class App extends Component {
           path = '/breweries/:zip'
           render={({ match }) => {
             const { zip } = match.params
-            return <Breweries zipQuery={zip} addToFavorites={this.addToFavorites} addSelectedBrew={this.addSelectedBrew}
+            return <Breweries zipQuery={zip} addToFavorites={this.addToFavorites} addSelection={this.addSelection}
         />
         }}
         />
         <Route
           path = '/jokes'
           render={() => {
-            return <Jokes addToFavorites={this.addToFavorites} addSelectedJoke={this.addSelectedJoke} />
+            return <Jokes addToFavorites={this.addToFavorites} addSelection={this.addSelection} />
           }}
         />
         <Route
           path = '/favorites'
           render={() => {
-            return <Favorites favBrews={this.state.favBreweries} favJokes={this.state.favJokes}/>
+            return <Favorites favBrews={this.state.favBreweries} favJokes={this.state.favJokes} removeFromFavs={this.removeFromFavs} />
           }}
         />
         <Route

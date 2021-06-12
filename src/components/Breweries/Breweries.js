@@ -31,7 +31,7 @@ class Breweries extends Component {
           state={brew.state}
           url={brew.website_url}
           addToFavorites={this.props.addToFavorites}
-          addSelectedBrew={this.props.addSelectedBrew}
+          addSelection={this.props.addSelection}
         />
       )
     })
@@ -40,18 +40,20 @@ class Breweries extends Component {
   render() {
     return (
       <div>
-        <h1>Step 2: Select a brewery to visit!</h1>
         {!this.state.breweries.length && !this.state.error &&
-          <h1 className='loading'>'Getting nearby breweries...'</h1>
+          <h1>Couldn't find any breweries at this zip!</h1>
         }
         {this.state.error &&
           <div className='msg-container'>
-              <h1 className='error-msg user-msg'>{this.state.error}</h1>
-              <button className='return-home' onClick={() => {window.location.href="/"}}>Return Home</button>
+            <h1 className='error-msg user-msg'>{this.state.error}</h1>
+            <button className='return-home' onClick={() => {window.location.href="/"}}>Return Home</button>
           </div>
         }
         {!this.state.error && this.state.breweries.length &&
-          <section>{this.foundBreweries()}</section>
+          <div>
+            <h1>Step 2: Select a brewery to visit!</h1>
+            <section>{this.foundBreweries()}</section>
+          </div>
         }
       </div>
     )
