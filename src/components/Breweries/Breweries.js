@@ -1,6 +1,5 @@
 import { Component } from 'react'
 import BrewCards from '../BrewCards/BrewCards'
-import Favorites from '../Favorites/Favorites'
 import { fetchBreweries } from '../../apiCalls'
 import './Breweries.css'
 

@@ -61,7 +61,7 @@ class App extends Component {
         <Route
           path='/recap'
           render={() => {
-            return <Recap />
+            return <Recap selectedBrewery={this.state.selectedBrew} selectedJoke={this.state.selectedJoke}/>
           }}
         />
         <Route
