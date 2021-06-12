@@ -1,0 +1,16 @@
+@media screen and (min-device-width: 320px) {
+
+  .brew-info,
+  .brew-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .brew-buttons {
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 2px solid lightgrey;
+  }
+
+}

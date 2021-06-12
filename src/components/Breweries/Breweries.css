@@ -1,3 +1,17 @@
-* {
-  position: relative;
+@media screen and (min-device-width: 320px) {
+
+  * {
+    position: relative;
+  }
+
+  .brew-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .step {
+    align-self: center;
+  }
+
 }
