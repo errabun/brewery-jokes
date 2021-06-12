@@ -1,3 +1,16 @@
 .app-wrap {
   height: 100vh;
+  position: relative;
+}
+
+.app-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-image: url('https://image.freepik.com/free-vector/twigs-hop-seamless-pattern-with-repeating-images-malt-leaves-hand-drawing-white_1284-49324.jpg');
+  background-size: cover;
+  opacity: 0.05;
 }
