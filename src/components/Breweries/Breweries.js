@@ -46,8 +46,8 @@ class Breweries extends Component {
         }
         {this.state.error &&
           <div className='msg-container'>
-              <h1 className='error-msg user-msg'>{this.state.error}</h1>
-              <button className='return-home' onClick={() => {window.location.href="/"}}>Return Home</button>
+            <h1 className='error-msg user-msg'>{this.state.error}</h1>
+            <button className='return-home' onClick={() => {window.location.href="/"}}>Return Home</button>
           </div>
         }
         {!this.state.error && this.state.breweries.length &&

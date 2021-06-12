@@ -1,6 +1,10 @@
 import './Favorites.css'
 
-const Favorites = ({favBrews, favJokes}) => {
+const Favorites = ({favBrews, favJokes, removeBrewFavs}) => {
+
+  const removeFromFavs = event => {
+    console.log(event.target.id)
+  }
 
   const mapFavBrews = () => {
     if (favBrews.length) {
@@ -8,7 +12,7 @@ const Favorites = ({favBrews, favJokes}) => {
         return (
           <div className='brewery'>
             <li id={brew.id}>{brew.name} in {brew.city}, {brew.state}</li>
-            <button className='remove'>Remove from favorites</button>
+            <button className='remove' onClick={event => removeBrewFavs(event)} id={brew.id}>Remove from favorites</button>
           </div>
         )
       })
@@ -22,7 +26,7 @@ const Favorites = ({favBrews, favJokes}) => {
         return (
           <div className='joke'>
             <li id={Date.now()}>{joke}</li>
-            <button className='remove'>Remove from favorites</button>
+            <button className='remove' id={Date.now()}>Remove from favorites</button>
           </div>
         )
       })
