@@ -21,8 +21,8 @@ const Favorites = ({favBrews, favJokes, removeFromFavs}) => {
       return favJokes.map(joke => {
         return (
           <div className='joke'>
-            <li id={Date.now()}>{joke}</li>
-            <button className='remove' id={Date.now()} onClick={event => removeFromFavs(event, 'favJokes')}>Remove from favorites</button>
+            <li id={joke.id}>{joke.joke}</li>
+            <button className='remove' id={joke.id} onClick={event => removeFromFavs(event, 'favJokes')}>Remove from favorites</button>
           </div>
         )
       })
