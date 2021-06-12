@@ -28,9 +28,9 @@ class App extends Component {
     return this.setState({ [state]: data })
   }
 
-  removeBrewFavs = (event) => {
-    const filteredFavs = this.state.favBreweries.filter(brew => brew.id !== parseInt(event.target.id))
-    this.setState({ favBreweries: filteredFavs })
+  removeFromFavs = (event, state) => {
+    const filteredFavs = this.state[state].filter(selected => selected.id !== parseInt(event.target.id))
+    this.setState({ [state]: filteredFavs })
   }
 
   render() {
@@ -56,7 +56,7 @@ class App extends Component {
         <Route
           path = '/favorites'
           render={() => {
-            return <Favorites favBrews={this.state.favBreweries} favJokes={this.state.favJokes} removeBrewFavs={this.removeBrewFavs}/>
+            return <Favorites favBrews={this.state.favBreweries} favJokes={this.state.favJokes} removeFromFavs={this.removeFromFavs} />
           }}
         />
         <Route
