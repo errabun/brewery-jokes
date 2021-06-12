@@ -6,7 +6,10 @@ const Favorites = ({favBrews, favJokes}) => {
     if (favBrews.length) {
       return favBrews.map(brew => {
         return (
-          <li id={brew.id}>{brew.name} in {brew.city}, {brew.state}</li>
+          <div className='brewery'>
+            <li id={brew.id}>{brew.name} in {brew.city}, {brew.state}</li>
+            <button className='remove'>Remove from favorites</button>
+          </div>
         )
       })
     }
