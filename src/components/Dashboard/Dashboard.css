@@ -1,17 +1,29 @@
-.input-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  position: relative;
-}
+@media screen and (min-device-width: 320px) {
 
-.dash {
-  position: relative;
-  border-radius: 7px;
-}
+  .input-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+  }
 
-.zip-input {
-  font-size: 20px;
-  margin-bottom: 20px;
+  .dash {
+    position: relative;
+    border-radius: 7px;
+  }
+
+  .zip-input {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .welcome {
+    font-size: 26px;
+  }
+
+  .step {
+    font-size: 20px; 
+  }
+
 }
