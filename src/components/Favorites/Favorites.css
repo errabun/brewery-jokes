@@ -1,0 +1,9 @@
+@media screen and (min-device-width: 320px) {
+
+  .fav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
