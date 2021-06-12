@@ -40,9 +40,8 @@ class Breweries extends Component {
   render() {
     return (
       <div>
-        <h1>Step 2: Select a brewery to visit!</h1>
         {!this.state.breweries.length && !this.state.error &&
-          <h1 className='loading'>'Getting nearby breweries...'</h1>
+          <h1>Couldn't find any breweries at this zip!</h1>
         }
         {this.state.error &&
           <div className='msg-container'>
@@ -51,7 +50,10 @@ class Breweries extends Component {
           </div>
         }
         {!this.state.error && this.state.breweries.length &&
-          <section>{this.foundBreweries()}</section>
+          <div>
+            <h1>Step 2: Select a brewery to visit!</h1>
+            <section>{this.foundBreweries()}</section>
+          </div>
         }
       </div>
     )
