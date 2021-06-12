@@ -24,17 +24,11 @@ class App extends Component {
     return this.setState({[state]: [...this.state[state], data]})
   }
 
-  addSelectedBrew = (data) => {
-    return this.setState({ selectedBrew: data })
-  }
-
-  addSelectedJoke = (data) => {
-    return this.setState({ selectedJoke: data })
+  addSelection = (data, state) => {
+    return this.setState({ [state]: data })
   }
 
   removeBrewFavs = (event) => {
-
-
     const filteredFavs = this.state.favBreweries.filter(brew => brew.id !== parseInt(event.target.id))
     this.setState({ favBreweries: filteredFavs })
   }
@@ -49,14 +43,14 @@ class App extends Component {
           path = '/breweries/:zip'
           render={({ match }) => {
             const { zip } = match.params
-            return <Breweries zipQuery={zip} addToFavorites={this.addToFavorites} addSelectedBrew={this.addSelectedBrew}
+            return <Breweries zipQuery={zip} addToFavorites={this.addToFavorites} addSelection={this.addSelection}
         />
         }}
         />
         <Route
           path = '/jokes'
           render={() => {
-            return <Jokes addToFavorites={this.addToFavorites} addSelectedJoke={this.addSelectedJoke} />
+            return <Jokes addToFavorites={this.addToFavorites} addSelection={this.addSelection} />
           }}
         />
         <Route

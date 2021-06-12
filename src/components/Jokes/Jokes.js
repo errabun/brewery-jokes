@@ -26,7 +26,7 @@ class Jokes extends Component {
         <p>{this.state.curJoke}</p>
         <button onClick={() => {this.componentDidMount()}}>Get another joke</button>
         <Link to='/recap' >
-          <button onClick={() => {this.props.addSelectedJoke(this.state.curJoke)}}>I'll use this joke</button>
+          <button onClick={() => {this.props.addSelection(this.state.curJoke, 'selectedJoke')}}>I'll use this joke</button>
         </Link>
         <button onClick={() => {this.props.addToFavorites('favJokes', this.state.curJoke)}}>Add to favorites</button>
       </div>
