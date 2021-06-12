@@ -14,3 +14,14 @@
   background-size: cover;
   opacity: 0.05;
 }
+
+button:hover {
+  cursor: pointer;
+}
+
+button {
+  padding: 5px;
+  border-radius: 7px;
+  box-shadow: 4px 2px 2px lightgrey;
+  margin: 5px;
+}

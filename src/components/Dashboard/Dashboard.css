@@ -8,4 +8,10 @@
 
 .dash {
   position: relative;
+  border-radius: 7px;
+}
+
+.zip-input {
+  font-size: 20px;
+  margin-bottom: 20px;
 }

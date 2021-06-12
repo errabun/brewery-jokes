@@ -25,11 +25,11 @@ class Dashboard extends Component {
           name='zip'
           value={this.state.query}
           onChange={event => this.zipInput(event)}
-          className='dash'
+          className='dash zip-input'
           required='required'
         />
         <Link to={`/breweries/${this.state.query}`}>
-          <button className='dash'>Find breweries</button>
+          <button className='dash button'>Find breweries</button>
         </Link>
       </div>
     )
