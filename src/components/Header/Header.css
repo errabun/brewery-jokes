@@ -33,3 +33,14 @@
   }
 
 }
+
+@media screen and (min-device-width: 768px) {
+
+  .nav-title {
+    font-size: 1.5em;
+  }
+
+  .nav-links {
+    font-size: 1em; 
+  }
+}
