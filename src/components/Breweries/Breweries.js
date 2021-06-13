@@ -15,7 +15,7 @@ class Breweries extends Component {
     const zipQuery = this.props.zipQuery
     fetchBreweries(zipQuery)
       .then(data => this.setState({ breweries: data }))
-      .catch(error => this.setState({ error: error }))
+      .catch(error => this.setState({ error: 'Couldn\'t fetch any breweries, please try again!' }))
   }
 
 
@@ -41,7 +41,7 @@ class Breweries extends Component {
     return (
       <div>
         {!this.state.breweries.length && !this.state.error &&
-          <h1>Couldn't find any breweries at this zip!</h1>
+          <h1 className='no-brew'>Couldn't find any breweries at this zip!</h1>
         }
         {this.state.error &&
           <div className='msg-container'>
