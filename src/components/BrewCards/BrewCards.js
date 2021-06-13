@@ -10,7 +10,7 @@ const BrewCards = ({name, street, city, state, url, id, addToFavorites, addSelec
         {!street &&
           'No address listed for this brewery!'}
         {street && city && state &&
-          <p><em>{street}</em> {city}, {state}</p>}
+          <p className='brew-address'><em>{street}</em> {city}, {state}</p>}
         {!url &&
           'Can\'t find a website for this brewery!'}
         <a href={url}>{url}</a>

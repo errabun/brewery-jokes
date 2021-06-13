@@ -34,13 +34,13 @@ const Favorites = ({favBrews, favJokes, removeFromFavs}) => {
     <div className='fav-container'>
       <div className='brew-fav'>
         <h2>Favorite Breweries</h2>
-          <ul>
+          <ul className='brew-list'>
             {mapFavBrews()}
           </ul>
       </div>
       <div className='joke-fav'>
         <h2>Favorite Jokes</h2>
-          <ul>
+          <ul className='joke-list'>
             {mapFavJokes()}
           </ul>
       </div>

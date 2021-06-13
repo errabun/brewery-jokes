@@ -1,0 +1,27 @@
+@media screen and (min-device-width: 320px) {
+
+  .brew-info,
+  .brew-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .brew-buttons {
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 2px solid lightgrey;
+  }
+
+}
+
+@media screen and (min-device-width: 768px) {
+
+  .brew-name {
+    font-size: 1.8em;
+  }
+
+  .brew-address {
+    font-size: 1.4em; 
+  }
+}

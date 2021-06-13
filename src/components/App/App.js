@@ -36,43 +36,43 @@ class App extends Component {
   render() {
     return (
       <div>
-      <main>
-      <Header />
-      <Switch>
-        <Route
-          path = '/breweries/:zip'
-          render={({ match }) => {
-            const { zip } = match.params
-            return <Breweries zipQuery={zip} addToFavorites={this.addToFavorites} addSelection={this.addSelection}
-        />
-        }}
-        />
-        <Route
-          path = '/jokes'
-          render={() => {
-            return <Jokes addToFavorites={this.addToFavorites} addSelection={this.addSelection} />
-          }}
-        />
-        <Route
-          path = '/favorites'
-          render={() => {
-            return <Favorites favBrews={this.state.favBreweries} favJokes={this.state.favJokes} removeFromFavs={this.removeFromFavs} />
-          }}
-        />
-        <Route
-          path='/recap'
-          render={() => {
-            return <Recap selectedBrewery={this.state.selectedBrew} selectedJoke={this.state.selectedJoke}/>
-          }}
-        />
-        <Route
-          path = '/'
-          component={Dashboard}
-        />
-        <Redirect to = '/' />
-      </Switch>
-      <Footer />
-      </main>
+        <Header />
+        <main className='app-wrap'>
+          <Switch>
+            <Route
+              path = '/breweries/:zip'
+              render={({ match }) => {
+                const { zip } = match.params
+                return <Breweries zipQuery={zip} addToFavorites={this.addToFavorites} addSelection={this.addSelection}
+            />
+            }}
+            />
+            <Route
+              path = '/jokes'
+              render={() => {
+                return <Jokes addToFavorites={this.addToFavorites} addSelection={this.addSelection} />
+              }}
+            />
+            <Route
+              path = '/favorites'
+              render={() => {
+                return <Favorites favBrews={this.state.favBreweries} favJokes={this.state.favJokes} removeFromFavs={this.removeFromFavs} />
+              }}
+            />
+            <Route
+              path='/recap'
+              render={() => {
+                return <Recap selectedBrewery={this.state.selectedBrew} selectedJoke={this.state.selectedJoke}/>
+              }}
+            />
+            <Route
+              path = '/'
+              component={Dashboard}
+            />
+            <Redirect to = '/' />
+          </Switch>
+        </main>
+        <Footer />
       </div>
     )
   }
