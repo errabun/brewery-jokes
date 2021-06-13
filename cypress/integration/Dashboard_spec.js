@@ -62,4 +62,9 @@ describe('Dashboard', () => {
       .get('.button').click()
       .url().should('include', '/breweries/80216')
   })
+
+  it('Should only be able to enter numbers into input field', () => {
+
+    cy.get('.zip-input').type('jslkn5lskd').should('have.value', '5')
+  })
 })
