@@ -14,3 +14,14 @@
   }
 
 }
+
+@media screen and (min-device-width: 768px) {
+
+  .brew-name {
+    font-size: 1.8em;
+  }
+
+  .brew-address {
+    font-size: 1.4em; 
+  }
+}
