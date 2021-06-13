@@ -17,10 +17,10 @@ class Dashboard extends Component {
   render() {
     return (
       <div className='input-form' >
-        <h1 className='welcome'> Welcome to Brew n' Jokes</h1>
-        <h2 className='step'> Step 1: Find breweries near you</h2>
+        <h1 className='welcome'>Welcome to Brew n' Jokes</h1>
+        <h2 className='step'>Step 1: Find breweries near you</h2>
         <input
-          type='text'
+          type='number'
           placeholder='Enter zip'
           name='zip'
           value={this.state.query}
