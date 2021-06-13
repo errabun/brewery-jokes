@@ -12,7 +12,7 @@ const Header = () => {
       </div>
       <div className="nav-links">
         <Link to='/favorites' >
-          <h2>Favorites</h2>
+          <h2 className='favorites'>Favorites</h2>
         </Link>
       </div>
     </nav>

@@ -24,5 +24,12 @@ describe('Header', () => {
     cy.get('.nav-links').should('have.text', 'Favorites')
   })
 
-  
+  it('Should redirect user to the favorites component if favorites link in header is clicked', () => {
+
+    cy.get('.zip-input').type('80216')
+      .get('.button').click()
+      .url().should('include', '/breweries/80216')
+      .get('.favorites').click()
+      .url().should('equal', 'http://localhost:3000/favorites')
+  })
 })
