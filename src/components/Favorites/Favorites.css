@@ -1,9 +1,27 @@
 @media screen and (min-device-width: 320px) {
 
-  .fav-container {
+  .fav-container,
+  .brew-fav,
+  .joke-fav {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+}
 
+@media screen and (min-device-width: 768px) {
+
+  .brew-fav,
+  .joke-fav {
+    font-size: 1.4em;
+  }
+
+  .brew-list,
+  .joke-list {
+    align-items: flex-start;
+  }
+
+  .fav-container {
+    justify-content: space-around;
+  }
 }
