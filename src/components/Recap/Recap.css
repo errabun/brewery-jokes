@@ -1,5 +1,16 @@
-.recap-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@media screen and (min-device-width: 320px) {
+
+  .recap-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+  }
+}
+
+@media screen and (min-device-width: 768px) {
+
+  .recap-container {
+    font-size: 1.3em;
+  }
 }

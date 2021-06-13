@@ -1,38 +1,35 @@
-.App {
-  text-align: center;
+* body {
+  margin: 0;
+  font-family: 'Kalam', cursive;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-wrap {
+  height: 100%;
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-image: url('https://image.freepik.com/free-vector/twigs-hop-seamless-pattern-with-repeating-images-malt-leaves-hand-drawing-white_1284-49324.jpg');
+  background-size: cover;
+  opacity: 0.05;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+button:hover {
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  padding: 10px 20px 10px 20px;
+  border-radius: 7px;
+  box-shadow: 4px 2px 2px lightgrey;
+  margin: 5px;
+  font-size: 1rem;
+  background-color: #ffdab2;
+  font-style: oblique;
 }

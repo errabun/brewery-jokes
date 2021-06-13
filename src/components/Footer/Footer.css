@@ -6,7 +6,12 @@
   width: 100%;
   height: 20vh;
 
-  background: linear-gradient(#1303c4, #03c4b7, #1303c4);
+  background: linear-gradient(#082eaa, #087faa);
   font-family: 'Anton', sans-serif;
   color: darkorange;
+}
+
+.gh-link {
+  color: darkorange;
+  font-size: larger; 
 }

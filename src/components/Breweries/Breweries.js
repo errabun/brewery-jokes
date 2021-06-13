@@ -50,8 +50,8 @@ class Breweries extends Component {
           </div>
         }
         {!this.state.error && this.state.breweries.length &&
-          <div>
-            <h1>Step 2: Select a brewery to visit!</h1>
+          <div className='brew-wrap'>
+            <h1 className='step two'>Step 2: Select a brewery to visit!</h1>
             <section>{this.foundBreweries()}</section>
           </div>
         }

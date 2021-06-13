@@ -22,13 +22,15 @@ class Jokes extends Component {
   render() {
     return (
       <div className='joke-container'>
-        <h2>Step 2: Find a good joke</h2>
-        <p>{this.state.curJoke}</p>
-        <button onClick={() => {this.componentDidMount()}}>Get another joke</button>
-        <Link to='/recap' >
-          <button onClick={() => {this.props.addSelection(this.state.curJoke, 'selectedJoke')}}>I'll use this joke</button>
-        </Link>
-        <button onClick={() => {this.props.addToFavorites('favJokes', {joke: this.state.curJoke, id: Date.now()})}}>Add to favorites</button>
+        <h2 className='step'>Step 3: Find a good joke</h2>
+        <p className='cur-joke'>{this.state.curJoke}</p>
+        <div className='button-wrap'>
+          <button onClick={() => {this.componentDidMount()}}>Get another joke</button>
+          <Link to='/recap' >
+            <button onClick={() => {this.props.addSelection(this.state.curJoke, 'selectedJoke')}} className='joke-select'>I'll use this joke</button>
+          </Link>
+          <button onClick={() => {this.props.addToFavorites('favJokes', {joke: this.state.curJoke, id: Date.now()})}}>Add to favorites</button>
+        </div>
       </div>
     )
   }
