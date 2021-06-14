@@ -33,5 +33,8 @@ BrewCards.propTypes = {
   street: PropTypes.string,
   city: PropTypes.string,
   state: PropTypes.string,
-  url: PropTypes.string, 
+  url: PropTypes.string,
+  id: PropTypes.number,
+  addToFavorites: PropTypes.func,
+  addSelection: PropTypes.func
 }
