@@ -25,7 +25,7 @@ class Jokes extends Component {
         <h2 className='step'>Step 3: Find a good joke</h2>
         <p className='cur-joke'>{this.state.curJoke}</p>
         <div className='button-wrap'>
-          <button onClick={() => {this.componentDidMount()}}>Get another joke</button>
+          <button onClick={() => {this.componentDidMount()}} className='fetch-joke'>Get another joke</button>
           <Link to='/recap' >
             <button onClick={() => {this.props.addSelection(this.state.curJoke, 'selectedJoke')}} className='joke-select'>I'll use this joke</button>
           </Link>

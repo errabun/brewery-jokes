@@ -41,8 +41,14 @@ describe('Jokes', () => {
       .and('have.text', 'Step 3: Find a good joke')
   })
 
-  it('Should give user option to click button for new joke', () => {
+  it('Should give user option to click button to select a joke and be redirected to the recap component', () => {
 
-    
+    cy.get('.joke-select').click()
+      .url().should('eq', 'http://localhost:3000/recap')
   })
+
+  // it('Should allow user to select a joke and add it to their favorites list', () => {
+  //
+  //
+  // })
 })
