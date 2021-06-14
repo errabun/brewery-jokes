@@ -17,19 +17,21 @@ class Dashboard extends Component {
   render() {
     return (
       <div className='input-form' >
-        <h1 className='welcome'> Welcome to Brew n' Jokes</h1>
-        <h2 className='step'> Step 1: Find breweries near you</h2>
-        <input
-          type='text'
-          placeholder='Enter zip'
-          name='zip'
-          value={this.state.query}
-          onChange={event => this.zipInput(event)}
-          className='dash zip-input'
-          required='required'
-        />
+        <h1 className='welcome'>Welcome to Brew n' Jokes</h1>
+        <h2 className='step'>Step 1: Find breweries near you</h2>
+        <form id='zipInputForm'>
+          <input
+            type='number'
+            placeholder='Enter 5 digit zip'
+            name='zip'
+            value={this.state.query}
+            onChange={event => this.zipInput(event)}
+            className='dash zip-input'
+            required='required'
+          />
+        </form>
         <Link to={`/breweries/${this.state.query}`}>
-          <button className='dash button'>Find breweries</button>
+          <button className='dash button' form='zipInputForm'>Find breweries</button>
         </Link>
       </div>
     )
