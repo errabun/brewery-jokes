@@ -11,11 +11,6 @@
 
 @media screen and (min-device-width: 768px) {
 
-  .brew-fav,
-  .joke-fav {
-    font-size: 1.4em;
-  }
-
   .brew-list,
   .joke-list {
     align-items: flex-start;
