@@ -47,8 +47,14 @@ describe('Jokes', () => {
       .url().should('eq', 'http://localhost:3000/recap')
   })
 
-  // it('Should allow user to select a joke and add it to their favorites list', () => {
-  //
-  //
-  // })
+  it('Should allow user to get another random joke by clicking button', () => {
+
+    cy.intercept('https://icanhazdadjoke.com/', {
+      "id": "R7UfaahVfFd",
+      "joke": "My dog used to chase people on a bike a lot. It got so bad I had to take his bike away.",
+      "status": 200
+    })
+      .get('.fetch-joke').click()
+      .get('.cur-joke').should('have.text', 'My dog used to chase people on a bike a lot. It got so bad I had to take his bike away.')
+  })
 })
