@@ -2,6 +2,7 @@ import { Component } from 'react'
 import BrewCards from '../BrewCards/BrewCards'
 import { fetchBreweries } from '../../apiCalls'
 import './Breweries.css'
+import PropTypes from 'prop-types'
 
 class Breweries extends Component {
   constructor(props) {
@@ -61,3 +62,9 @@ class Breweries extends Component {
 }
 
 export default Breweries
+
+Breweries.propTypes = {
+  zipQuery: PropTypes.string,
+  addToFavorites: PropTypes.func,
+  addSelection: PropTypes.func
+}
