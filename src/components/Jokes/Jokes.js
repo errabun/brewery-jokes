@@ -36,7 +36,7 @@ class Jokes extends Component {
       }
       {this.state.error &&
         <div className='msg-container'>
-          <h1 className='error-msg user-msg'>{this.state.error}</h1>
+          <h1 className='joke-error'>{this.state.error}</h1>
           <button className='return-home' onClick={() => {window.location.href="/"}}>Return Home</button>
         </div>
       }

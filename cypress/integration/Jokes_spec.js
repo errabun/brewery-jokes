@@ -58,3 +58,39 @@ describe('Jokes', () => {
       .get('.cur-joke').should('have.text', 'My dog used to chase people on a bike a lot. It got so bad I had to take his bike away.')
   })
 })
+
+describe('Error', () => {
+
+  it('Should notify the user if joke fetch was unsuccessful', () => {
+
+    cy.visit('http://localhost:3000/')
+      .get('.zip-input').type('80216')
+      .intercept('https://api.openbrewerydb.org/breweries?by_postal=80216', [
+        {
+          "id": 12709,
+          "obdb_id": "mockery-brewing-denver",
+          "name": "Mockery Brewing",
+          "brewery_type": "micro",
+          "street": "3501 Delgany St",
+          "address_2": null,
+          "address_3": null,
+          "city": "Denver",
+          "state": "Colorado",
+          "county_province": null,
+          "postal_code": "80216-3617",
+          "country": "United States",
+          "longitude": "-104.9797349",
+          "latitude": "39.7712389",
+          "phone": "3039532058",
+          "website_url": "http://Mockerybrewing.com",
+          "updated_at": "2018-08-24T00:00:00.000Z",
+          "created_at": "2018-07-24T00:00:00.000Z"
+        }
+      ])
+      .get('.button').click()
+      .intercept('https://icanhazdadjoke.com/', {})
+      .get('.brew-select').click()
+      .get('.joke-error').should('be.visible')
+      .and('have.text', "Couldn't get any jokes, please try again!")
+  })
+})
