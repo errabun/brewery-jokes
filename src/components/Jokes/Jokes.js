@@ -2,6 +2,7 @@ import { Component } from 'react'
 import { Link } from 'react-router-dom'
 import './Jokes.css'
 import { fetchJoke } from '../../apiCalls'
+import PropTypes from 'prop-types'
 
 
 class Jokes extends Component {
@@ -46,3 +47,8 @@ class Jokes extends Component {
 }
 
 export default Jokes;
+
+Jokes.propTypes = {
+  addToFavorites: PropTypes.func,
+  addSelection: PropTypes.func
+}
