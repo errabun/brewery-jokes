@@ -16,7 +16,7 @@ const BrewCards = ({name, street, city, state, url, id, addToFavorites, addSelec
         <a href={url}>{url}</a>
       </div>
       <div className='brew-buttons'>
-        <button onClick={() => addToFavorites( 'favBreweries', { name, street, city, state, url, id })}>Add to favorites</button>
+        <button onClick={() => addToFavorites( 'favBreweries', { name, street, city, state, url, id })} className='brew-fav'>Add to favorites</button>
         <Link to={`/jokes/${id}`}>
           <button onClick={() => addSelection({ name, street, city, state, url, id }, 'selectedBrew')} className='brew-select'>Select this brewery</button>
         </Link>

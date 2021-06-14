@@ -29,7 +29,7 @@ class Jokes extends Component {
           <Link to='/recap' >
             <button onClick={() => {this.props.addSelection(this.state.curJoke, 'selectedJoke')}} className='joke-select'>I'll use this joke</button>
           </Link>
-          <button onClick={() => {this.props.addToFavorites('favJokes', {joke: this.state.curJoke, id: Date.now()})}}>Add to favorites</button>
+          <button onClick={() => {this.props.addToFavorites('favJokes', {joke: this.state.curJoke, id: Date.now()})}} className='joke-fav'>Add to favorites</button>
         </div>
       </div>
     )
