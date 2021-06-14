@@ -27,6 +27,11 @@ describe('Recap', () => {
         }
       ])
       .get('.button').click()
+      .intercept('https://icanhazdadjoke.com/', {
+        "id": "R7UfaahVfFd",
+        "joke": "My dog used to chase people on a bike a lot. It got so bad I had to take his bike away.",
+        "status": 200
+      })
       .get('.brew-select').click()
       .get('.joke-select').click()
   })
@@ -46,5 +51,11 @@ describe('Recap', () => {
 
     cy.get('.cheers').should('be.visible')
       .and('have.text', 'Cheers, have fun!')
+  })
+
+  it('Should display the joke the user selected', () => {
+
+    cy.get('.user-joke').should('be.visible')
+      .and('have.text', '"My dog used to chase people on a bike a lot. It got so bad I had to take his bike away."')
   })
 })
