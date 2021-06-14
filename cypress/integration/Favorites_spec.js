@@ -57,4 +57,44 @@ describe('Favorites', () => {
       .get('.brew-head').should('be.visible')
       .and('have.text', 'Favorite Breweries')
   })
+
+  it('Should have a header to the list of favorite jokes', () => {
+
+    cy.get('.favorites').click()
+      .get('.joke-head').should('be.visible')
+      .and('have.text', 'Favorite Jokes')
+  })
+
+  it('Should notify the user if they have not favorited any breweries', () => {
+
+    cy.get('.favorites').click()
+      .get('.brew-list').should('be.visible')
+      .and('have.text', 'No favorite breweries yet!')
+  })
+
+  it('Should notify the user if they have not favorited any Jokes', () => {
+
+    cy.get('.favorites').click()
+      .get('.joke-list').should('be.visible')
+      .and('have.text', 'No favorited jokes yet!')
+  })
+
+  it('User should be able to remove a brewery from their favorites list', () => {
+
+    cy.get('.brew-fav').click()
+      .get('.favorites').click()
+      .get('.remove').should('be.visible').click()
+      .get('.brew-list').should('be.visible')
+      .and('have.text', 'No favorite breweries yet!')
+  })
+
+  it('User should be able to remove a joke from their favorites list', () => {
+
+    cy.get('.brew-select').click()
+      .get('.joke-fav').click()
+      .get('.favorites').click()
+      .get('.remove').should('be.visible').click()
+      .get('.joke-list').should('be.visible')
+      .and('have.text', 'No favorited jokes yet!')
+  })
 })
