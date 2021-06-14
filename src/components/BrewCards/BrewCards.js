@@ -1,5 +1,6 @@
 import './BrewCards.css'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 const BrewCards = ({name, street, city, state, url, id, addToFavorites, addSelection }) => {
 
@@ -26,3 +27,14 @@ const BrewCards = ({name, street, city, state, url, id, addToFavorites, addSelec
 }
 
 export default BrewCards
+
+BrewCards.propTypes = {
+  name: PropTypes.string,
+  street: PropTypes.string,
+  city: PropTypes.string,
+  state: PropTypes.string,
+  url: PropTypes.string,
+  id: PropTypes.number,
+  addToFavorites: PropTypes.func,
+  addSelection: PropTypes.func
+}
