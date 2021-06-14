@@ -1,4 +1,5 @@
 import './Recap.css'
+import PropTypes from 'prop-types'
 
 const Recap = ({ selectedBrewery, selectedJoke}) => {
 
@@ -14,3 +15,15 @@ const Recap = ({ selectedBrewery, selectedJoke}) => {
 }
 
 export default Recap
+
+Recap.propTypes = {
+  selectedBrewery: PropTypes.shape({
+    city: PropTypes.string,
+    name: PropTypes.string,
+    state: PropTypes.string,
+    street: PropTypes.string,
+    url: PropTypes.string,
+    id: PropTypes.number
+  }),
+  selectedJoke: PropTypes.string
+}
