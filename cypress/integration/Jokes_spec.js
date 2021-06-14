@@ -55,7 +55,8 @@ describe('Jokes', () => {
       "status": 200
     })
       .get('.fetch-joke').click()
-      .get('.cur-joke').should('have.text', 'My dog used to chase people on a bike a lot. It got so bad I had to take his bike away.')
+      .get('.cur-joke').should('be.visible')
+      .and('have.text', 'My dog used to chase people on a bike a lot. It got so bad I had to take his bike away.')
   })
 })
 
