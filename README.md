@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# Brew n' Jokes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+* [Description](#description)
+* [Installation](#installation)
+* [Walkthrough](#walkthrough)
+* [New Learning](#newlearning)
+* [Author](#author)
+* [Technologies](#technologies)
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+ - This project was a solo project assigned by [Turing School of Software and Design](www.turing.edu).  I was given 7 days to build an application that targeted a small niche audience based on a couple different made up personas and user stories.  I was a brewery manager in my past career and would often find that jokes are the best ice breakers when you bellying up to your local brew pub.  With that in mind, I thought it would be nice to have a resource that lets users find a breweries based on zip code and arm those users with a solid dad joke to use after selecting a brewery to visit.  
 
-### `npm start`
+- Persona 1: [John Smith](https://docs.google.com/document/d/1af4IiB6spwmB7mprl8qW1BYcLe4TahmEGmvScPByprI/edit?usp=sharing)
+- Persona 2: [Greg Jones](https://docs.google.com/document/d/1K2gL_rv3O_Bq9qW3Xi84UiW1mQ0PTCeqfh-oJbRI20I/edit?usp=sharing)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Notable features
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+ - Built using React framework
+ - Use of Router to enable user to navigate using back and forward browser controls.
+ - Tested with Cypress acceptance testing including the use of stubbed fetch data and happy/sad paths
+ - Utilized responsive design for mobile, tablet or desktop viewing
+ - Ability for user to favorite different breweries and jokes
+ - Utilized a modular file structure for easy file navigation
 
-### `npm test`
+### Deploy Link
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Check it out!](https://brew-n-jokes.herokuapp.com/)
 
-### `npm run build`
+## Installation
+1. Clone down this [repo](https://github.com/errabun/brewery-jokes)
+2. CD into project directory
+3. Run npm i to install all project dependencies
+4. Run npm start to begin the server
+5. Application should be shown in separate window once npm start is complete
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Walkthrough
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Visit the [homepage](https://brew-n-jokes.herokuapp.com/) where the user will be prompted to enter a zip code in which they'd like to find a list of breweries
+- Once redirected, the user will be able to look over a list of breweries that are located in the zip you previously entered.  The user will then have the option to visit the breweries websites, get their address, or add to your list of favorites
+- Once the user selects a brewery they are interested in visiting, they will be taken to another page where they will be prompted with a random 'dad joke'.  The user will be able to get another randomly fetched joke, add any of the jokes to a list of favorites, or select a joke they'd like to use. 
+- Lastly, the user will get a recap of their selections including the brewery name, address, url and the joke they decided to try out on their next visit.  
+- At any time, the user will be able to access their favorites list by clicking the link in the upper right hand corner.
 
-### `npm run eject`
+## New Learning
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- React fundamentals
+- Router
+- Cypress Acceptance Testing
+- Typechecking with PropTypes
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Learning Goals
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Demonstrate mastery of the technologies we have learned and been working with over the past 4 weeks including React, Router, Asynchronous JavaScript, and end to end testing with Cypress.
+- Work within project constraints to deliver a product for a made up niche audience, which helps solve a problem unique to them. 
+- Display data from several API's in a way that applies directly to the niche audience. 
+- Ability for users to store/manipulate the data displayed in the application through favoriting of breweries and jokes
+- Mulitple views handled by Router
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Project Progression
 
-## Learn More
+Given the short amount of time that was provided to complete this project, it was essential to define an achievable MVP.  The planning phase mainly consisted of figuring out what features were going to be highlighted and what could be considered 'nice-to-have'.  After designing some wireframes of how I envisioned the app to be displayed and how the user flow was going work, I noticed that I was going to need several different components for each of the different pages within the application.  I am happy with my understanding of all the different technologies that were required to be in the app, as once I had all the components in place, the whole thing came together nicely.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Reflections
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+All in all, I am very pleased with how this application came to life.  It is very close to what I had in mind when I was in the planning stages, and did not come with too many problems or issues throughout the development.  A couple of minor issues that took up some time included adding a background image with very low opacity, prop drilling for some nested components, and some assertions within Cypress.  There are still a few features in which I am hoping to integrate in the near future including the utilization of the Google Maps API, so the user can get directions from wherever they are located to the closest brewery, or to any brewery of their choosing.  
 
-### Code Splitting
+## Author
+<table>
+    <tr>
+        <td> Eric Rabun <a href="https://github.com/errabun">GH</td>
+    </tr>
+    </tr>
+        <td><img src="https://avatars.githubusercontent.com/u/73191225?v=4" alt="E. Rabun" width="125" height="auto" /></td>
+    </tr>
+</table>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Technologies
+<table>
+    <tr>
+        <td>Framework</td>
+        <td>Functionality</td>
+        <td>Structure</td>
+        <td>Styling</td>
+    </tr>
+    </tr>
+        <td><img src="https://mildaintrainings.com/wp-content/uploads/2017/11/react-logo.png" alt="react" width="100" height="auto" /></td>
+        <td><img src="https://raw.githubusercontent.com/voodootikigod/logo.js/master/js.png" alt="javascript" width="100" height="auto" /></td>
+        <td><img src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png" alt="html" width="100" height="auto" /></td>
+        <td><img src="https://www.pinclipart.com/picdir/middle/175-1759459_eng-a-med-kamel-frameworks-css-css-logo.png" alt="css" width="100" height="auto" /></td>
+    </tr>
+</table>
