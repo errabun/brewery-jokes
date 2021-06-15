@@ -27,12 +27,13 @@ class Dashboard extends Component {
             value={this.state.query}
             onChange={event => this.zipInput(event)}
             className='dash zip-input'
-            required='required'
           />
         </form>
+        {this.state.query.length === 5 ?
         <Link to={`/breweries/${this.state.query}`}>
-          <button className='dash button' form='zipInputForm'>Find breweries</button>
-        </Link>
+          <button className='dash button' form='zipInputForm' >Find breweries</button>
+        </Link> :
+        <h3 className='zip-instruct'>Please enter a 5 digit zip</h3>}
       </div>
     )
   }

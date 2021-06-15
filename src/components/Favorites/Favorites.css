@@ -5,7 +5,11 @@
   .joke-fav {
     display: flex;
     flex-direction: column;
-    align-items: center;
+  }
+
+  .brew-head,
+  .joke-head {
+    align-self: center;
   }
 }
 
@@ -13,7 +17,12 @@
 
   .brew-list,
   .joke-list {
-    align-items: flex-start;
+    font-size: 1.3em;
+  }
+
+  .brew-head,
+  .joke-head {
+    font-size: 2.5em;
   }
 
   .fav-container {

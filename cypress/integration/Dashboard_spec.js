@@ -67,4 +67,15 @@ describe('Dashboard', () => {
 
     cy.get('.zip-input').type('jslkn5lskd').should('have.value', '5')
   })
+
+  it('User should be instructed to enter 5 digits before the find breweries button is available to be clicked', () => {
+
+    cy.get('.zip-instruct').should('be.visible')
+      .get('.zip-input').type('802')
+      .get('.zip-instruct').should('be.visible')
+      .get('.zip-input').type('16')
+      .get('.button').should('be.visible')
+      .get('.zip-input').type('1')
+      .get('.zip-instruct').should('be.visible')
+  })
 })
