@@ -33,7 +33,7 @@ class Dashboard extends Component {
         <Link to={`/breweries/${this.state.query}`}>
           <button className='dash button' form='zipInputForm' >Find breweries</button>
         </Link> :
-        <h3>Please enter a 5 digit zip</h3>}
+        <h3 className='zip-instruct'>Please enter a 5 digit zip</h3>}
       </div>
     )
   }
