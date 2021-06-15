@@ -58,7 +58,7 @@ Recap & Favorites
 
 Lighthouse Report 
 
-<img src='https://www.icloud.com/iclouddrive/0Rw7yXe2OTkd8wJP2laAhiViA#Screen_Shot_2021-06-14_at_8.05.22_PM' width='250'>
+![Lighthouse Report](https://user-images.githubusercontent.com/73191225/121983542-b99ab880-cd4e-11eb-80d6-36cfe712925b.png)
 
 ## New Learning
 
