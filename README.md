@@ -44,6 +44,22 @@
 - Lastly, the user will get a recap of their selections including the brewery name, address, url and the joke they decided to try out on their next visit.  
 - At any time, the user will be able to access their favorites list by clicking the link in the upper right hand corner.
 
+Dashboard
+
+<img src="https://media.giphy.com/media/bO4jLxSAKPeKeqNe8X/giphy.gif" width="400">
+
+Breweries & Jokes
+
+<img src='https://media.giphy.com/media/g4lxp3Y9yTbOAfgtW9/giphy.gif' width='400'>
+                   
+Recap & Favorites
+
+<img src='https://media.giphy.com/media/wrD5n2aSXlEgoRKwbb/giphy.gif' width='400'>
+
+Lighthouse Report 
+
+<img src='https://www.icloud.com/iclouddrive/0Rw7yXe2OTkd8wJP2laAhiViA#Screen_Shot_2021-06-14_at_8.05.22_PM' width='250'>
+
 ## New Learning
 
 - React fundamentals
