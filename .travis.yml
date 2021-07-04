@@ -1,8 +1,12 @@
 language: node_js
 node_js:
-- 'node'
+- node
 notifications:
   email: false
 script:
 - npm test
 - npm run build
+deploy:
+  api_key:
+    secure: BQZhsn+SB1HpqdEroPc/wADMVYtgpadfd/5GwGhzxRvfyhfb4GKE+hbgKv2eNTwBo0sn8bohAjy28oqRz/Bavmz/scJPkSdRVhke4gvILy9P+Kq004s0N2i3f8NY2Q39wZnKUyUhSpeOrXth3Bp/H3gkSKDQtSVVN866k4qYYxip1s2T/WzNpILDn6Wtlzu6jidLbYC2GNwBGTpVsvQJmFJvdH0T2Goo8/jxjx+kfh90it5gd6AvAR3N3q54VDHb7pIfuk/CCf0SNBL3m94xEoNMTgKtHqnqrMNGfdXoqTcejz/PIz4eyR2DtDA6H+sZzwmZ8DuYHntUlv/nc94RtttscLt/g0WyV93NzrtsYEcu+xXNKUBMhX/mEWl4c4aNxRHZMjO2b0KYG42I2yyqmt/NY0LmjsKiRN0T0UenHFkYE6WOZB9uc2TYD0HNObTjl/NBt3zRC105vSjFKw/TjZcg3xnmTba3c/YtHr8qk8998kx7sgOXQRMwpxPJsU4c9m0QWpOMo/6F+8mpAAN5V2qrD79lS+b9ZwH+psEBfnD866gJP4w7u4pAgAQCpAnvOPFSjxhRGybyvpNXaNu+y1Q+DBsAi23JGNSL69xkjp+CZmECENUk2IeTTfS6Q7IEkFLqNnbN/r4FPLr8fYXEF8w0JVUfYNnYytmvja3tNLM=
+  app: Brew-n-Jokes
