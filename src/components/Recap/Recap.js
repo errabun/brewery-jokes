@@ -1,10 +1,27 @@
 import './Recap.css'
 import PropTypes from 'prop-types'
 import MapContainer from '../MapContainer/Map'
+import Geocode from 'react-geocode'
+import { useState, useEffect } from 'react'
 
 const Recap = ({ selectedBrewery, selectedJoke}) => {
 
+  const [brewLatLon, setBrewLatLon] = useState('')
+  Geocode.setApiKey='AIzaSyDFp1mdD7Gn5Jeth2u2kmXFMpVvDtmfNEU'
+
+  useEffect(() => {
+    Geocode.fromAddress(selectedBrewery.name)
+      .then(resp => {
+        const { lat, lng } = resp.results[0].geometry.location
+        setBrewLatLon(lat, lng)
+      },
+        (error) => {console.error(error)}
+      ) 
+  }, [])
+
   console.log(selectedBrewery)
+
+  
 
   return (
     <div className='recap-container'>
