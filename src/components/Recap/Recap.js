@@ -4,13 +4,15 @@ import MapContainer from '../MapContainer/Map'
 
 const Recap = ({ selectedBrewery, selectedJoke}) => {
 
+  console.log(selectedBrewery)
+
   return (
     <div className='recap-container'>
       <h1 className='cheers'>Cheers, have fun!</h1>
       <h3 className='user-selections'>You're headed to <a href={selectedBrewery.url}><em>{selectedBrewery.name}</em></a> located at {selectedBrewery.street} in {selectedBrewery.city}, {selectedBrewery.state}</h3>
       <div>
         <MapContainer 
-          
+          brewery={selectedBrewery}
         />
       </div>
       <h3 className='reminder'>☟  Don't forget to try out the joke you selected  ☟</h3>

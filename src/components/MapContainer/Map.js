@@ -4,25 +4,29 @@ import React from "react"
 function MapContainer() {
 
   const apiKey = 'AIzaSyDFp1mdD7Gn5Jeth2u2kmXFMpVvDtmfNEU'
+  const mapStyles = {
+    height: '350px', 
+    width: '500px' 
+  }
 
-  const mapRef = React.useRef(null)
   return (
     <LoadScript
-      googleMapsApiKey='AIzaSyDFp1mdD7Gn5Jeth2u2kmXFMpVvDtmfNEU'
+      googleMapsApiKey={apiKey}
     >
       <GoogleMap
-        ref={mapRef}
         defaultZoom={10}
-        defaultCenter={{ lat: 38, lng: -97 }}
+        defaultCenter={{ lat: 38, lng: 97 }}
         defaultOptions= {{
           scrollwheel: true, 
           mapTypeControl: true, 
           fullscreenControl: false, 
           streetViewControl: true,
         }}
-        mapContainerStyle={{ width: '500px', height: '350px' }}
+        mapContainerStyle={mapStyles}
       >
-        {}
+        <Marker
+          
+        />
       </GoogleMap>
     </LoadScript>
   )
