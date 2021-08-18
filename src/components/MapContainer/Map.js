@@ -41,6 +41,7 @@ function MapContainer({ brewLat, brewLng, brewery }) {
           streetViewControl: true,
         }}
         mapContainerStyle={mapStyles}
+        key={process.env.REACT_APP_GOOGLE_API_KEY}
       >
         <Marker
           name={brewery.name}
