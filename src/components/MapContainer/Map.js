@@ -1,23 +1,40 @@
-import { Marker, GoogleMap, withScriptjs, withGoogleMap, LoadScript } from "@react-google-maps/api"
-import React from "react"
+import { Marker, GoogleMap, useJsApiLoader, withGoogleMap, LoadScript } from "@react-google-maps/api"
+import React, { useCallback, useState } from "react"
 
 function MapContainer({ brewLat, brewLng, brewery }) {
 
-  console.log(brewLng)
+  const { isLoaded } = useJsApiLoader({
+    id: 'brew-map-script', 
+    googleMapsApiKey: 'AIzaSyDFp1mdD7Gn5Jeth2u2kmXFMpVvDtmfNEU'
+  })
 
-  const apiKey = 'AIzaSyDFp1mdD7Gn5Jeth2u2kmXFMpVvDtmfNEU'
+  const [map, setMap] = useState(null)
+
+  const onLoad = useCallback(function callback(map) {
+    const bounds = new window.google.maps.LatLngBounds()
+    map.fitBounds(bounds)
+    setMap(map)
+  }, [])
+
+  const onUnmount = useCallback(function callback(map) {
+    setMap(null)
+  }, [])
+
+  // const apiKey = 'AIzaSyDFp1mdD7Gn5Jeth2u2kmXFMpVvDtmfNEU'
   const mapStyles = {
     height: '350px', 
     width: '500px' 
   }
 
-  return (
-    <LoadScript
-      googleMapsApiKey={apiKey}
-    >
+  return isLoaded ? (
       <GoogleMap
-        defaultZoom={10}
-        defaultCenter={{ lat: 38, lng: 97 }}
+        zoom={13}
+        center={{ 
+          lat: parseFloat(brewLat), 
+          lng: parseFloat(brewLng) 
+        }}
+        onLoad={onLoad}
+        onUnmount={onUnmount}
         defaultOptions= {{
           scrollwheel: true, 
           mapTypeControl: true, 
@@ -36,8 +53,7 @@ function MapContainer({ brewLat, brewLng, brewery }) {
         />
         <Marker />
       </GoogleMap>
-    </LoadScript>
-  )
+  ) : <></>
 }
 
 export default MapContainer
