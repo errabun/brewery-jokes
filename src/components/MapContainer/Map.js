@@ -1,11 +1,12 @@
-import { Marker, GoogleMap, useJsApiLoader, withGoogleMap, LoadScript } from "@react-google-maps/api"
+import { Marker, GoogleMap, useJsApiLoader } from "@react-google-maps/api"
 import React, { useCallback, useState } from "react"
 
 function MapContainer({ brewLat, brewLng, brewery }) {
 
+  const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY
   const { isLoaded } = useJsApiLoader({
     id: 'brew-map-script', 
-    googleMapsApiKey: 'AIzaSyDFp1mdD7Gn5Jeth2u2kmXFMpVvDtmfNEU'
+    googleMapsApiKey: {API_KEY}
   })
 
   const [map, setMap] = useState(null)
@@ -20,7 +21,6 @@ function MapContainer({ brewLat, brewLng, brewery }) {
     setMap(null)
   }, [])
 
-  // const apiKey = 'AIzaSyDFp1mdD7Gn5Jeth2u2kmXFMpVvDtmfNEU'
   const mapStyles = {
     height: '350px', 
     width: '500px' 
