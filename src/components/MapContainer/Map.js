@@ -1,7 +1,9 @@
 import { Marker, GoogleMap, withScriptjs, withGoogleMap, LoadScript } from "@react-google-maps/api"
 import React from "react"
 
-function MapContainer() {
+function MapContainer({ brewLat, brewLng, brewery }) {
+
+  console.log(brewLng)
 
   const apiKey = 'AIzaSyDFp1mdD7Gn5Jeth2u2kmXFMpVvDtmfNEU'
   const mapStyles = {
@@ -25,8 +27,14 @@ function MapContainer() {
         mapContainerStyle={mapStyles}
       >
         <Marker
-          
+          name={brewery.name}
+          draggable={false}
+          position={{
+            lat: brewLat, 
+            lng: brewLng
+          }}
         />
+        <Marker />
       </GoogleMap>
     </LoadScript>
   )

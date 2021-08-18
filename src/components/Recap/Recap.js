@@ -3,23 +3,27 @@ import PropTypes from 'prop-types'
 import MapContainer from '../MapContainer/Map'
 import Geocode from 'react-geocode'
 import { useState, useEffect } from 'react'
+import { GoogleMap } from '@react-google-maps/api'
 
 const Recap = ({ selectedBrewery, selectedJoke}) => {
 
-  const [brewLatLon, setBrewLatLon] = useState('')
-  Geocode.setApiKey='AIzaSyDFp1mdD7Gn5Jeth2u2kmXFMpVvDtmfNEU'
-
+  const [brewLat, setBrewLat] = useState('')
+  const [brewLng, setBrewLng] = useState('')
+  Geocode.setApiKey('AIzaSyDFp1mdD7Gn5Jeth2u2kmXFMpVvDtmfNEU')
+  Geocode.setLanguage('en')
+  Geocode.setRegion('us') 
+  Geocode.setLocationType('ROOFTOP')
+  Geocode.enableDebug()
+  
   useEffect(() => {
     Geocode.fromAddress(selectedBrewery.name)
       .then(resp => {
-        const { lat, lng } = resp.results[0].geometry.location
-        setBrewLatLon(lat, lng)
-      },
-        (error) => {console.error(error)}
-      ) 
+          setBrewLat(resp.results[0].geometry.location.lat)
+          setBrewLng(resp.results[0].geometry.location.lng)
+        })
   }, [])
 
-  console.log(selectedBrewery)
+
 
   
 
@@ -29,6 +33,8 @@ const Recap = ({ selectedBrewery, selectedJoke}) => {
       <h3 className='user-selections'>You're headed to <a href={selectedBrewery.url}><em>{selectedBrewery.name}</em></a> located at {selectedBrewery.street} in {selectedBrewery.city}, {selectedBrewery.state}</h3>
       <div>
         <MapContainer 
+          brewLat={brewLat}
+          brewLng={brewLng}
           brewery={selectedBrewery}
         />
       </div>
