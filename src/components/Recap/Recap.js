@@ -9,7 +9,7 @@ const Recap = ({ selectedBrewery, selectedJoke}) => {
   const [brewLat, setBrewLat] = useState('')
   const [brewLng, setBrewLng] = useState('')
   const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY
-  Geocode.setApiKey={API_KEY}
+  Geocode.setApiKey(API_KEY)
   Geocode.setLanguage('en')
   Geocode.setRegion('us') 
   Geocode.setLocationType('ROOFTOP')
