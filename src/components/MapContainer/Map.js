@@ -3,10 +3,9 @@ import React, { useCallback, useState } from "react"
 
 function MapContainer({ brewLat, brewLng, brewery }) {
 
-  const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY
   const { isLoaded } = useJsApiLoader({
     id: 'brew-map-script', 
-    googleMapsApiKey: API_KEY
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY
   })
 
   const [map, setMap] = useState(null)
@@ -47,8 +46,8 @@ function MapContainer({ brewLat, brewLng, brewery }) {
           name={brewery.name}
           draggable={false}
           position={{
-            lat: brewLat, 
-            lng: brewLng
+            lat: parseFloat(brewLat), 
+            lng: parseFloat(brewLng) 
           }}
         />
         <Marker />
