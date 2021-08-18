@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 import MapContainer from '../MapContainer/Map'
 import Geocode from 'react-geocode'
 import { useState, useEffect } from 'react'
-import { GoogleMap } from '@react-google-maps/api'
 
 const Recap = ({ selectedBrewery, selectedJoke}) => {
 
   const [brewLat, setBrewLat] = useState('')
   const [brewLng, setBrewLng] = useState('')
-  Geocode.setApiKey('AIzaSyDFp1mdD7Gn5Jeth2u2kmXFMpVvDtmfNEU')
+
+  Geocode.setApiKey(process.env.REACT_APP_GOOGLE_API_KEY)
   Geocode.setLanguage('en')
   Geocode.setRegion('us') 
   Geocode.setLocationType('ROOFTOP')
@@ -21,11 +21,8 @@ const Recap = ({ selectedBrewery, selectedJoke}) => {
           setBrewLat(resp.results[0].geometry.location.lat)
           setBrewLng(resp.results[0].geometry.location.lng)
         })
+      .catch(err => console.log(err))
   }, [])
-
-
-
-  
 
   return (
     <div className='recap-container'>

@@ -9,7 +9,7 @@
 
   .brew-buttons {
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     border-bottom: 2px solid lightgrey;
   }
 
