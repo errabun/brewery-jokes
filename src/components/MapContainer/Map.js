@@ -3,6 +3,8 @@ import React, { useCallback, useState } from "react"
 
 function MapContainer({ brewLat, brewLng, brewery }) {
 
+  console.log(parseFloat(brewLat), brewLng)
+
   const { isLoaded } = useJsApiLoader({
     id: 'brew-map-script', 
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY
@@ -27,17 +29,17 @@ function MapContainer({ brewLat, brewLng, brewery }) {
 
   return isLoaded ? (
       <GoogleMap
-        zoom={13}
         center={{ 
-          lat: brewLat, 
-          lng: brewLng 
+          lat: parseFloat(brewLat), 
+          lng: parseFloat(brewLng) 
         }}
+        zoom={13}
         onLoad={onLoad}
         onUnmount={onUnmount}
         defaultOptions= {{
           scrollwheel: true, 
           mapTypeControl: true, 
-          fullscreenControl: false, 
+          fullscreenControl: true, 
           streetViewControl: true,
         }}
         mapContainerStyle={mapStyles}
@@ -47,8 +49,8 @@ function MapContainer({ brewLat, brewLng, brewery }) {
           name={brewery.name}
           draggable={false}
           position={{
-            lat: brewLat, 
-            lng: brewLng 
+            lat: parseFloat(brewLat), 
+            lng: parseFloat(brewLng)
           }}
         />
         <Marker />
