@@ -29,8 +29,8 @@ function MapContainer({ brewLat, brewLng, brewery }) {
       <GoogleMap
         zoom={13}
         center={{ 
-          lat: parseFloat(brewLat), 
-          lng: parseFloat(brewLng) 
+          lat: brewLat, 
+          lng: brewLng 
         }}
         onLoad={onLoad}
         onUnmount={onUnmount}
@@ -41,13 +41,14 @@ function MapContainer({ brewLat, brewLng, brewery }) {
           streetViewControl: true,
         }}
         mapContainerStyle={mapStyles}
+        key={process.env.REACT_APP_GOOGLE_API_KEY}
       >
         <Marker
           name={brewery.name}
           draggable={false}
           position={{
-            lat: parseFloat(brewLat), 
-            lng: parseFloat(brewLng) 
+            lat: brewLat, 
+            lng: brewLng 
           }}
         />
         <Marker />
