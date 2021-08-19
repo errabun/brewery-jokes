@@ -25,9 +25,11 @@ function MapContainer({ brewLat, brewLng, brewery }) {
     width: '500px' 
   }
 
+  const setZoom = 13
+
   return isLoaded ? (
       <GoogleMap
-        zoom={13}
+        zoom={setZoom}
         center={{ 
           lat: brewLat, 
           lng: brewLng 
@@ -37,7 +39,7 @@ function MapContainer({ brewLat, brewLng, brewery }) {
         defaultOptions= {{
           scrollwheel: true, 
           mapTypeControl: true, 
-          fullscreenControl: false, 
+          fullscreenControl: true, 
           streetViewControl: true,
         }}
         mapContainerStyle={mapStyles}
