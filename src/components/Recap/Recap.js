@@ -30,8 +30,8 @@ const Recap = ({ selectedBrewery, selectedJoke}) => {
       <h3 className='user-selections'>You're headed to <a href={selectedBrewery.url}><em>{selectedBrewery.name}</em></a> located at {selectedBrewery.street} in {selectedBrewery.city}, {selectedBrewery.state}</h3>
       <div>
         <MapContainer 
-          brewLat={brewLat}
-          brewLng={brewLng}
+          brewLat={parseFloat(brewLat)}
+          brewLng={parseFloat(brewLng)}
           brewery={selectedBrewery}
         />
       </div>
