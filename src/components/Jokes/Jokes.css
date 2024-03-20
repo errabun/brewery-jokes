@@ -9,6 +9,7 @@
 
   .cur-joke {
     margin: 0 8px 0 8px;
+
   }
 
   .joke-select {
@@ -20,6 +21,7 @@
 
   .cur-joke {
     font-size: larger;
+    margin-bottom: 1.2em;
   }
 
   .button-wrap {
